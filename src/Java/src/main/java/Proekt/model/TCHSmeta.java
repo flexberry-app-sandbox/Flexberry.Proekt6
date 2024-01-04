@@ -7,6 +7,7 @@ import Proekt.utils.UUIDConverter;
 import javax.persistence.*;
 import java.util.UUID;
 
+import com.sap.olingo.jpa.metadata.core.edm.annotation.EdmIgnore;
 
 /**
  * Entity implementation class for Entity: ТЧСмета
@@ -29,6 +30,16 @@ public class TCHSmeta {
 
     @Column(name = "СтоимМонРаб")
     private Float стоиммонраб;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "DokSmeta")
+    @Convert("DokSmeta")
+    @Column(name = "ДокСмета", length = 16, unique = true, nullable = false)
+    private UUID _doksmetaid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "DokSmeta", insertable = false, updatable = false)
+    private DokSmeta doksmeta;
 
 
     public TCHSmeta() {

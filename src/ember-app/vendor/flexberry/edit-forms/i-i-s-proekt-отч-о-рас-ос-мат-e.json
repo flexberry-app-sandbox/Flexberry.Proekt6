@@ -1,5 +1,14 @@
 ﻿{
-  "propertyLookup": [],
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Сотрудники",
+      "projection": "ДолжностьL",
+      "detailModelName": null
+    }
+  ],
   "external": false,
   "caption": "Отчет о расходах основных материалов",
   "name": "IISProektОтчОРасОсМатE",

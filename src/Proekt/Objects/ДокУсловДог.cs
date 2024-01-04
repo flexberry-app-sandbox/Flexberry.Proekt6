@@ -33,12 +33,21 @@ namespace IIS.Proekt
             "ДатаНачала as \'Дата начала\'",
             "ДатаОкончан as \'Дата окончания\'",
             "Длительность as \'Длительность\'",
-            "СумПоДогов as \'Сумма по договору\'"})]
+            "СумПоДогов as \'Сумма по договору\'",
+            "СпрКонтраг as \'Контрагент\'",
+            "СпрКонтраг.Наименование as \'Контрагент\'",
+            "ОбъектСМР as \'Объект строительства\'",
+            "ОбъектСМР.ОбъектСтроит as \'Объект строительства\'",
+            "ДокСмета as \'Объем работ по смете\'",
+            "ДокСмета.ОбРабПоСмет as \'Объем работ по смете\'"})]
     [View("ДокУсловДогL", new string[] {
             "ДатаНачала as \'Дата начала\'",
             "ДатаОкончан as \'Дата окончания\'",
             "Длительность as \'Длительность\'",
-            "СумПоДогов as \'Сумма по договору\'"})]
+            "СумПоДогов as \'Сумма по договору\'",
+            "СпрКонтраг.Наименование as \'Контрагент\'",
+            "ОбъектСМР.ОбъектСтроит as \'Объект строительства\'",
+            "ДокСмета.ОбРабПоСмет as \'Объем работ по смете\'"})]
     public class ДокУсловДог : ICSSoft.STORMNET.DataObject
     {
         
@@ -49,6 +58,12 @@ namespace IIS.Proekt
         private System.DateTime fДатаНачала;
         
         private System.DateTime fДатаОкончан;
+        
+        private IIS.Proekt.ДокСмета fДокСмета;
+        
+        private IIS.Proekt.ОбъектСМР fОбъектСМР;
+        
+        private IIS.Proekt.СпрКонтраг fСпрКонтраг;
         
         // *** Start programmer edit section *** (ДокУсловДог CustomMembers)
 
@@ -176,6 +191,108 @@ namespace IIS.Proekt
                 // *** Start programmer edit section *** (ДокУсловДог.СумПоДогов Set end)
 
                 // *** End programmer edit section *** (ДокУсловДог.СумПоДогов Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Док услов дог.
+        /// </summary>
+        // *** Start programmer edit section *** (ДокУсловДог.ДокСмета CustomAttributes)
+
+        // *** End programmer edit section *** (ДокУсловДог.ДокСмета CustomAttributes)
+        [PropertyStorage(new string[] {
+                "ДокСмета"})]
+        [NotNull()]
+        public virtual IIS.Proekt.ДокСмета ДокСмета
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ДокУсловДог.ДокСмета Get start)
+
+                // *** End programmer edit section *** (ДокУсловДог.ДокСмета Get start)
+                IIS.Proekt.ДокСмета result = this.fДокСмета;
+                // *** Start programmer edit section *** (ДокУсловДог.ДокСмета Get end)
+
+                // *** End programmer edit section *** (ДокУсловДог.ДокСмета Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ДокУсловДог.ДокСмета Set start)
+
+                // *** End programmer edit section *** (ДокУсловДог.ДокСмета Set start)
+                this.fДокСмета = value;
+                // *** Start programmer edit section *** (ДокУсловДог.ДокСмета Set end)
+
+                // *** End programmer edit section *** (ДокУсловДог.ДокСмета Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Док услов дог.
+        /// </summary>
+        // *** Start programmer edit section *** (ДокУсловДог.ОбъектСМР CustomAttributes)
+
+        // *** End programmer edit section *** (ДокУсловДог.ОбъектСМР CustomAttributes)
+        [PropertyStorage(new string[] {
+                "ОбъектСМР"})]
+        [NotNull()]
+        public virtual IIS.Proekt.ОбъектСМР ОбъектСМР
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ДокУсловДог.ОбъектСМР Get start)
+
+                // *** End programmer edit section *** (ДокУсловДог.ОбъектСМР Get start)
+                IIS.Proekt.ОбъектСМР result = this.fОбъектСМР;
+                // *** Start programmer edit section *** (ДокУсловДог.ОбъектСМР Get end)
+
+                // *** End programmer edit section *** (ДокУсловДог.ОбъектСМР Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ДокУсловДог.ОбъектСМР Set start)
+
+                // *** End programmer edit section *** (ДокУсловДог.ОбъектСМР Set start)
+                this.fОбъектСМР = value;
+                // *** Start programmer edit section *** (ДокУсловДог.ОбъектСМР Set end)
+
+                // *** End programmer edit section *** (ДокУсловДог.ОбъектСМР Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Док услов дог.
+        /// </summary>
+        // *** Start programmer edit section *** (ДокУсловДог.СпрКонтраг CustomAttributes)
+
+        // *** End programmer edit section *** (ДокУсловДог.СпрКонтраг CustomAttributes)
+        [PropertyStorage(new string[] {
+                "СпрКонтраг"})]
+        [NotNull()]
+        public virtual IIS.Proekt.СпрКонтраг СпрКонтраг
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ДокУсловДог.СпрКонтраг Get start)
+
+                // *** End programmer edit section *** (ДокУсловДог.СпрКонтраг Get start)
+                IIS.Proekt.СпрКонтраг result = this.fСпрКонтраг;
+                // *** Start programmer edit section *** (ДокУсловДог.СпрКонтраг Get end)
+
+                // *** End programmer edit section *** (ДокУсловДог.СпрКонтраг Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ДокУсловДог.СпрКонтраг Set start)
+
+                // *** End programmer edit section *** (ДокУсловДог.СпрКонтраг Set start)
+                this.fСпрКонтраг = value;
+                // *** Start programmer edit section *** (ДокУсловДог.СпрКонтраг Set end)
+
+                // *** End programmer edit section *** (ДокУсловДог.СпрКонтраг Set end)
             }
         }
         

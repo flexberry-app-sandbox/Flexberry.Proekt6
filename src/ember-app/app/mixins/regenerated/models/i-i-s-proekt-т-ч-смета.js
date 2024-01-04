@@ -7,7 +7,8 @@ import { attr, belongsTo, hasMany } from 'ember-flexberry-data/utils/attributes'
 export let Model = Mixin.create({
   стоимМонРаб: DS.attr('decimal'),
   стоимОборуд: DS.attr('decimal'),
-  стоимСтроРаб: DS.attr('decimal')
+  стоимСтроРаб: DS.attr('decimal'),
+  докСмета: DS.belongsTo('i-i-s-proekt-док-смета', { inverse: 'тЧСмета', async: false })
 });
 
 export let ValidationRules = {
@@ -30,6 +31,13 @@ export let ValidationRules = {
     validators: [
       validator('ds-error'),
       validator('number', { allowString: true, allowBlank: true }),
+    ],
+  },
+  докСмета: {
+    descriptionKey: 'models.i-i-s-proekt-т-ч-смета.validations.докСмета.__caption__',
+    validators: [
+      validator('ds-error'),
+      validator('presence', true),
     ],
   },
 };

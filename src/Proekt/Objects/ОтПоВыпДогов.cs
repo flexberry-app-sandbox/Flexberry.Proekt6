@@ -31,16 +31,21 @@ namespace IIS.Proekt
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("ОтПоВыпДоговE", new string[] {
             "Выполнение as \'Выполнение\'",
-            "СумКонечОстат as \'Сумма конечный остаток\'"})]
+            "СумКонечОстат as \'Сумма конечный остаток\'",
+            "Сотрудники as \'Сотрудник\'",
+            "Сотрудники.ФИО as \'Сотрудник\'"})]
     [View("ОтПоВыпДоговL", new string[] {
             "Выполнение as \'Выполнение\'",
-            "СумКонечОстат as \'Сумма конечный остаток\'"})]
+            "СумКонечОстат as \'Сумма конечный остаток\'",
+            "Сотрудники.ФИО as \'Сотрудник\'"})]
     public class ОтПоВыпДогов : ICSSoft.STORMNET.DataObject
     {
         
         private float fСумКонечОстат;
         
         private float fВыполнение;
+        
+        private IIS.Proekt.Сотрудники fСотрудники;
         
         // *** Start programmer edit section *** (ОтПоВыпДогов CustomMembers)
 
@@ -106,6 +111,40 @@ namespace IIS.Proekt
                 // *** Start programmer edit section *** (ОтПоВыпДогов.СумКонечОстат Set end)
 
                 // *** End programmer edit section *** (ОтПоВыпДогов.СумКонечОстат Set end)
+            }
+        }
+        
+        /// <summary>
+        /// От по вып догов.
+        /// </summary>
+        // *** Start programmer edit section *** (ОтПоВыпДогов.Сотрудники CustomAttributes)
+
+        // *** End programmer edit section *** (ОтПоВыпДогов.Сотрудники CustomAttributes)
+        [PropertyStorage(new string[] {
+                "Сотрудники"})]
+        [NotNull()]
+        public virtual IIS.Proekt.Сотрудники Сотрудники
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ОтПоВыпДогов.Сотрудники Get start)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.Сотрудники Get start)
+                IIS.Proekt.Сотрудники result = this.fСотрудники;
+                // *** Start programmer edit section *** (ОтПоВыпДогов.Сотрудники Get end)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.Сотрудники Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ОтПоВыпДогов.Сотрудники Set start)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.Сотрудники Set start)
+                this.fСотрудники = value;
+                // *** Start programmer edit section *** (ОтПоВыпДогов.Сотрудники Set end)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.Сотрудники Set end)
             }
         }
         

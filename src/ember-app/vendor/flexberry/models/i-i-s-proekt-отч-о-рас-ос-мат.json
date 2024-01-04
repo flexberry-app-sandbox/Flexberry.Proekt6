@@ -34,7 +34,15 @@
       "ordered": false
     }
   ],
-  "belongsTo": [],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "сотрудники",
+      "relatedTo": "i-i-s-proekt-сотрудники",
+      "inverse": null
+    }
+  ],
   "hasMany": [],
   "projections": [
     {
@@ -60,7 +68,29 @@
           "index": 2
         }
       ],
-      "belongsTo": [],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Сотрудники",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "Сотрудник",
+              "hidden": false,
+              "index": 4
+            }
+          ],
+          "index": 3,
+          "type": "default",
+          "caption": "Сотрудник",
+          "name": "сотрудники",
+          "relatedTo": "i-i-s-proekt-сотрудники",
+          "inverse": null
+        }
+      ],
       "hasMany": []
     },
     {
@@ -86,7 +116,29 @@
           "index": 2
         }
       ],
-      "belongsTo": [],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Сотрудники",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "Сотрудники",
+              "hidden": false,
+              "index": 3
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Сотрудники",
+          "name": "сотрудники",
+          "relatedTo": "i-i-s-proekt-сотрудники",
+          "inverse": null
+        }
+      ],
       "hasMany": []
     }
   ],

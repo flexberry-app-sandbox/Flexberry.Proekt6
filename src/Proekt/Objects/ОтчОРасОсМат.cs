@@ -32,11 +32,14 @@ namespace IIS.Proekt
     [View("ОтчОРасОсМатE", new string[] {
             "НормаРасхода as \'Норма расхода\'",
             "КолПоАктТек as \'Количество по актам текущий\'",
-            "СуммаИтого as \'Сумма итого\'"})]
+            "СуммаИтого as \'Сумма итого\'",
+            "Сотрудники as \'Сотрудник\'",
+            "Сотрудники.ФИО as \'Сотрудник\'"})]
     [View("ОтчОРасОсМатL", new string[] {
             "НормаРасхода as \'Норма расхода\'",
             "КолПоАктТек as \'Количество по актам текущий\'",
-            "СуммаИтого as \'Сумма итого\'"})]
+            "СуммаИтого as \'Сумма итого\'",
+            "Сотрудники.ФИО as \'Сотрудники\'"})]
     public class ОтчОРасОсМат : ICSSoft.STORMNET.DataObject
     {
         
@@ -45,6 +48,8 @@ namespace IIS.Proekt
         private int fНормаРасхода;
         
         private float fСуммаИтого;
+        
+        private IIS.Proekt.Сотрудники fСотрудники;
         
         // *** Start programmer edit section *** (ОтчОРасОсМат CustomMembers)
 
@@ -141,6 +146,40 @@ namespace IIS.Proekt
                 // *** Start programmer edit section *** (ОтчОРасОсМат.СуммаИтого Set end)
 
                 // *** End programmer edit section *** (ОтчОРасОсМат.СуммаИтого Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Отч о рас ос мат.
+        /// </summary>
+        // *** Start programmer edit section *** (ОтчОРасОсМат.Сотрудники CustomAttributes)
+
+        // *** End programmer edit section *** (ОтчОРасОсМат.Сотрудники CustomAttributes)
+        [PropertyStorage(new string[] {
+                "Сотрудники"})]
+        [NotNull()]
+        public virtual IIS.Proekt.Сотрудники Сотрудники
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ОтчОРасОсМат.Сотрудники Get start)
+
+                // *** End programmer edit section *** (ОтчОРасОсМат.Сотрудники Get start)
+                IIS.Proekt.Сотрудники result = this.fСотрудники;
+                // *** Start programmer edit section *** (ОтчОРасОсМат.Сотрудники Get end)
+
+                // *** End programmer edit section *** (ОтчОРасОсМат.Сотрудники Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ОтчОРасОсМат.Сотрудники Set start)
+
+                // *** End programmer edit section *** (ОтчОРасОсМат.Сотрудники Set start)
+                this.fСотрудники = value;
+                // *** Start programmer edit section *** (ОтчОРасОсМат.Сотрудники Set end)
+
+                // *** End programmer edit section *** (ОтчОРасОсМат.Сотрудники Set end)
             }
         }
         

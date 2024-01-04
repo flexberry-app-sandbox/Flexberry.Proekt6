@@ -8,6 +8,7 @@ CREATE TABLE ОтчОРасОсМат (
  КолПоАктТек INT NULL,
  НормаРасхода INT NULL,
  СуммаИтого REAL NULL,
+ Сотрудники UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
@@ -27,6 +28,8 @@ CREATE TABLE ДокСмета (
  Количество INT NULL,
  ЦенаЗаЕд REAL NULL,
  НомСметРасч INT NULL,
+ ОбРабПоСмет REAL NULL,
+ ОбъектСМР UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
@@ -49,6 +52,7 @@ CREATE TABLE ОтПоВыпДогов (
  primaryKey UUID NOT NULL,
  СумКонечОстат REAL NULL,
  Выполнение REAL NULL,
+ Сотрудники UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
@@ -73,6 +77,9 @@ CREATE TABLE ДокУсловДог (
  СумПоДогов REAL NULL,
  ДатаНачала TIMESTAMP(3) NULL,
  ДатаОкончан TIMESTAMP(3) NULL,
+ ДокСмета UUID NOT NULL,
+ ОбъектСМР UUID NOT NULL,
+ СпрКонтраг UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
@@ -100,6 +107,7 @@ CREATE TABLE ТЧСмета (
  СтоимСтроРаб REAL NULL,
  СтоимОборуд REAL NULL,
  СтоимМонРаб REAL NULL,
+ ДокСмета UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
@@ -207,8 +215,29 @@ CREATE TABLE ApplicationLog (
 
 
 
+ ALTER TABLE ОтчОРасОсМат ADD CONSTRAINT FKa38efd010a44d3840bcaec07030440b464955959 FOREIGN KEY (Сотрудники) REFERENCES Сотрудники; 
+CREATE INDEX Indexa38efd010a44d3840bcaec07030440b464955959 on ОтчОРасОсМат (Сотрудники); 
+
+ ALTER TABLE ДокСмета ADD CONSTRAINT FKd8ed78c0e847f2c5452a78e27d8cb528e829685d FOREIGN KEY (ОбъектСМР) REFERENCES ОбъектСМР; 
+CREATE INDEX Indexd8ed78c0e847f2c5452a78e27d8cb528e829685d on ДокСмета (ОбъектСМР); 
+
+ ALTER TABLE ОтПоВыпДогов ADD CONSTRAINT FKbf0fca5eefcdd6772e1ea0480cbc90e2785e03a2 FOREIGN KEY (Сотрудники) REFERENCES Сотрудники; 
+CREATE INDEX Indexbf0fca5eefcdd6772e1ea0480cbc90e2785e03a2 on ОтПоВыпДогов (Сотрудники); 
+
+ ALTER TABLE ДокУсловДог ADD CONSTRAINT FKf71c2d39437406f39d509b13f6635352d4816381 FOREIGN KEY (ДокСмета) REFERENCES ДокСмета; 
+CREATE INDEX Indexf71c2d39437406f39d509b13f6635352d4816381 on ДокУсловДог (ДокСмета); 
+
+ ALTER TABLE ДокУсловДог ADD CONSTRAINT FKce589f99d72f2778e90b4830d1f66ce21b3b11ae FOREIGN KEY (ОбъектСМР) REFERENCES ОбъектСМР; 
+CREATE INDEX Indexce589f99d72f2778e90b4830d1f66ce21b3b11ae on ДокУсловДог (ОбъектСМР); 
+
+ ALTER TABLE ДокУсловДог ADD CONSTRAINT FKd6af110b36a4e825659018fa00c1edffcc03b17d FOREIGN KEY (СпрКонтраг) REFERENCES СпрКонтраг; 
+CREATE INDEX Indexd6af110b36a4e825659018fa00c1edffcc03b17d on ДокУсловДог (СпрКонтраг); 
+
  ALTER TABLE Сотрудники ADD CONSTRAINT FK171da32c3a46411f455935f74af2aa921a3eada1 FOREIGN KEY (СпраДолжнос) REFERENCES СпраДолжнос; 
 CREATE INDEX Index171da32c3a46411f455935f74af2aa921a3eada1 on Сотрудники (СпраДолжнос); 
+
+ ALTER TABLE ТЧСмета ADD CONSTRAINT FKbd4a0df0c0953d5ff8c771befbf6881dc1e1c598 FOREIGN KEY (ДокСмета) REFERENCES ДокСмета; 
+CREATE INDEX Indexbd4a0df0c0953d5ff8c771befbf6881dc1e1c598 on ТЧСмета (ДокСмета); 
 
  ALTER TABLE STORMWEBSEARCH ADD CONSTRAINT FKc4378e39870eb056aec84088683297a01d2a6200 FOREIGN KEY (FilterSetting_m0) REFERENCES STORMFILTERSETTING; 
 

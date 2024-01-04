@@ -66,4 +66,82 @@
     }}
     {{flexberry-validationmessage error=(v-get validationModel "сумПоДогов" "message")}}
   </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-proekt-док-услов-дог-e.спрКонтраг-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.спрКонтраг
+      relationName="спрКонтраг"
+      projection="СпрКонтрагL"
+      title=(t "forms.i-i-s-proekt-док-услов-дог-e.спрКонтраг-caption")
+      readonly=readonly
+      componentName="спрКонтрагLookup"
+      class=(if (v-get validationModel "спрКонтраг" "isInvalid") "error")
+      data-test-i-i-s-proekt-док-услов-дог-e-спрКонтраг=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "спрКонтраг" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.спрКонтраг.наименование
+      class=(if (v-get validationModel.спрКонтраг "наименование" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-док-услов-дог-e.спрКонтраг.наименование-caption")
+      data-test-i-i-s-proekt-док-услов-дог-e-спрКонтраг-наименование=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.спрКонтраг "наименование" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-proekt-док-услов-дог-e.объектСМР-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.объектСМР
+      relationName="объектСМР"
+      projection="ОбъектСМРL"
+      title=(t "forms.i-i-s-proekt-док-услов-дог-e.объектСМР-caption")
+      readonly=readonly
+      componentName="объектСМРLookup"
+      class=(if (v-get validationModel "объектСМР" "isInvalid") "error")
+      data-test-i-i-s-proekt-док-услов-дог-e-объектСМР=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "объектСМР" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.объектСМР.объектСтроит
+      class=(if (v-get validationModel.объектСМР "объектСтроит" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-док-услов-дог-e.объектСМР.объектСтроит-caption")
+      data-test-i-i-s-proekt-док-услов-дог-e-объектСМР-объектСтроит=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.объектСМР "объектСтроит" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-proekt-док-услов-дог-e.докСмета-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.докСмета
+      relationName="докСмета"
+      projection="ДокСметаL"
+      title=(t "forms.i-i-s-proekt-док-услов-дог-e.докСмета-caption")
+      readonly=readonly
+      componentName="докСметаLookup"
+      class=(if (v-get validationModel "докСмета" "isInvalid") "error")
+      data-test-i-i-s-proekt-док-услов-дог-e-докСмета=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "докСмета" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.докСмета.обРабПоСмет
+      class=(if (v-get validationModel.докСмета "обРабПоСмет" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-док-услов-дог-e.докСмета.обРабПоСмет-caption")
+      data-test-i-i-s-proekt-док-услов-дог-e-докСмета-обРабПоСмет=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.докСмета "обРабПоСмет" "message")}}
+  </div>
 </form>

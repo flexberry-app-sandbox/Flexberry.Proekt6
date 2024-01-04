@@ -12,6 +12,8 @@ CREATE TABLE [ОтчОРасОсМат] (
 
 	 [СуммаИтого] REAL  NULL,
 
+	 [Сотрудники] UNIQUEIDENTIFIER  NOT NULL,
+
 	 PRIMARY KEY ([primaryKey]))
 
 
@@ -40,9 +42,13 @@ CREATE TABLE [ДокСмета] (
 
 	 [НомСметРасч] INT  NULL,
 
+	 [ОбРабПоСмет] REAL  NULL,
+
 	 [ОбщСметСтои] REAL  NULL,
 
 	 [ЦенаЗаЕд] REAL  NULL,
+
+	 [ОбъектСМР] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
 
@@ -78,6 +84,8 @@ CREATE TABLE [ОтПоВыпДогов] (
 	 [Выполнение] REAL  NULL,
 
 	 [СумКонечОстат] REAL  NULL,
+
+	 [Сотрудники] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
 
@@ -117,6 +125,12 @@ CREATE TABLE [ДокУсловДог] (
 	 [Длительность] INT  NULL,
 
 	 [СумПоДогов] REAL  NULL,
+
+	 [ДокСмета] UNIQUEIDENTIFIER  NOT NULL,
+
+	 [ОбъектСМР] UNIQUEIDENTIFIER  NOT NULL,
+
+	 [СпрКонтраг] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
 
@@ -162,6 +176,8 @@ CREATE TABLE [ТЧСмета] (
 	 [СтоимОборуд] REAL  NULL,
 
 	 [СтоимСтроРаб] REAL  NULL,
+
+	 [ДокСмета] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
 

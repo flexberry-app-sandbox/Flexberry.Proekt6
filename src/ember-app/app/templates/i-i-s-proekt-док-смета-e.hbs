@@ -64,4 +64,44 @@
     }}
     {{flexberry-validationmessage error=(v-get validationModel "общСметСтои" "message")}}
   </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-proekt-док-смета-e.объектСМР-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.объектСМР
+      relationName="объектСМР"
+      projection="ОбъектСМРL"
+      title=(t "forms.i-i-s-proekt-док-смета-e.объектСМР-caption")
+      readonly=readonly
+      componentName="объектСМРLookup"
+      class=(if (v-get validationModel "объектСМР" "isInvalid") "error")
+      data-test-i-i-s-proekt-док-смета-e-объектСМР=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "объектСМР" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.объектСМР.объектСтроит
+      class=(if (v-get validationModel.объектСМР "объектСтроит" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-док-смета-e.объектСМР.объектСтроит-caption")
+      data-test-i-i-s-proekt-док-смета-e-объектСМР-объектСтроит=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.объектСМР "объектСтроит" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-proekt-док-смета-e.тЧСмета-caption"}}</label>
+    {{flexberry-groupedit
+      componentName="тЧСметаGroupEdit"
+      mainModelProjection=modelProjection
+      modelProjection=modelProjection.attributes.тЧСмета
+      content=model.тЧСмета
+      readonly=readonly
+      orderable=false
+      class=(if (v-get validationModel "тЧСмета" "isInvalid") "error")
+      data-test-i-i-s-proekt-док-смета-e-тЧСмета=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "тЧСмета" "message")}}
+  </div>
 </form>

@@ -13,6 +13,8 @@ CREATE TABLE "ОтчОРасОсМат"
 
 	"СуммаИтого" FLOAT(53) NULL,
 
+	"Сотрудники" RAW(16) NOT NULL,
+
 	 PRIMARY KEY ("primaryKey")
 ) ;
 
@@ -48,6 +50,10 @@ CREATE TABLE "ДокСмета"
 	"ЦенаЗаЕд" FLOAT(53) NULL,
 
 	"НомСметРасч" NUMBER(10) NULL,
+
+	"ОбРабПоСмет" FLOAT(53) NULL,
+
+	"ОбъектСМР" RAW(16) NOT NULL,
 
 	 PRIMARY KEY ("primaryKey")
 ) ;
@@ -89,6 +95,8 @@ CREATE TABLE "ОтПоВыпДогов"
 	"СумКонечОстат" FLOAT(53) NULL,
 
 	"Выполнение" FLOAT(53) NULL,
+
+	"Сотрудники" RAW(16) NOT NULL,
 
 	 PRIMARY KEY ("primaryKey")
 ) ;
@@ -134,6 +142,12 @@ CREATE TABLE "ДокУсловДог"
 	"ДатаНачала" DATE NULL,
 
 	"ДатаОкончан" DATE NULL,
+
+	"ДокСмета" RAW(16) NOT NULL,
+
+	"ОбъектСМР" RAW(16) NOT NULL,
+
+	"СпрКонтраг" RAW(16) NOT NULL,
 
 	 PRIMARY KEY ("primaryKey")
 ) ;
@@ -185,6 +199,8 @@ CREATE TABLE "ТЧСмета"
 	"СтоимОборуд" FLOAT(53) NULL,
 
 	"СтоимМонРаб" FLOAT(53) NULL,
+
+	"ДокСмета" RAW(16) NOT NULL,
 
 	 PRIMARY KEY ("primaryKey")
 ) ;
@@ -388,10 +404,45 @@ CREATE TABLE "ApplicationLog"
 
 
 
+ALTER TABLE "ОтчОРасОсМат"
+	ADD CONSTRAINT "ОтчОРасОсМат__2474" FOREIGN KEY ("Сотрудники") REFERENCES "Сотрудники" ("primaryKey");
+
+CREATE INDEX "ОтчОРасОсМат__2244" on "ОтчОРасОсМат" ("Сотрудники");
+
+ALTER TABLE "ДокСмета"
+	ADD CONSTRAINT "ДокСмета_FОбъ_7023" FOREIGN KEY ("ОбъектСМР") REFERENCES "ОбъектСМР" ("primaryKey");
+
+CREATE INDEX "ДокСмета_IОбъ_5185" on "ДокСмета" ("ОбъектСМР");
+
+ALTER TABLE "ОтПоВыпДогов"
+	ADD CONSTRAINT "ОтПоВыпДогов_F_890" FOREIGN KEY ("Сотрудники") REFERENCES "Сотрудники" ("primaryKey");
+
+CREATE INDEX "ОтПоВыпДогов__1314" on "ОтПоВыпДогов" ("Сотрудники");
+
+ALTER TABLE "ДокУсловДог"
+	ADD CONSTRAINT "ДокУсловДог_F_9952" FOREIGN KEY ("ДокСмета") REFERENCES "ДокСмета" ("primaryKey");
+
+CREATE INDEX "ДокУсловДог_I_7395" on "ДокУсловДог" ("ДокСмета");
+
+ALTER TABLE "ДокУсловДог"
+	ADD CONSTRAINT "ДокУсловДог_F_2135" FOREIGN KEY ("ОбъектСМР") REFERENCES "ОбъектСМР" ("primaryKey");
+
+CREATE INDEX "ДокУсловДог_I_8380" on "ДокУсловДог" ("ОбъектСМР");
+
+ALTER TABLE "ДокУсловДог"
+	ADD CONSTRAINT "ДокУсловДог_F_2838" FOREIGN KEY ("СпрКонтраг") REFERENCES "СпрКонтраг" ("primaryKey");
+
+CREATE INDEX "ДокУсловДог_I_5945" on "ДокУсловДог" ("СпрКонтраг");
+
 ALTER TABLE "Сотрудники"
 	ADD CONSTRAINT "Сотрудники_FС_3109" FOREIGN KEY ("СпраДолжнос") REFERENCES "СпраДолжнос" ("primaryKey");
 
 CREATE INDEX "Сотрудники_IС_7366" on "Сотрудники" ("СпраДолжнос");
+
+ALTER TABLE "ТЧСмета"
+	ADD CONSTRAINT "ТЧСмета_FДокС_8650" FOREIGN KEY ("ДокСмета") REFERENCES "ДокСмета" ("primaryKey");
+
+CREATE INDEX "ТЧСмета_IДокС_6858" on "ТЧСмета" ("ДокСмета");
 
 ALTER TABLE "STORMWEBSEARCH"
 	ADD CONSTRAINT "STORMWEBSEARCH_FSTORMFILT_6521" FOREIGN KEY ("FilterSetting_m0") REFERENCES "STORMFILTERSETTING" ("primaryKey");

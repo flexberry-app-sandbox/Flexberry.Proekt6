@@ -33,12 +33,17 @@ namespace IIS.Proekt
             "НомСметРасч as \'Номер сметных расчетов\'",
             "Количество as \'Количество\'",
             "ЦенаЗаЕд as \'Цена за единицу\'",
-            "ОбщСметСтои as \'Общая сметная стоимость\'"})]
+            "ОбщСметСтои as \'Общая сметная стоимость\'",
+            "ОбъектСМР as \'Объект строительства\'",
+            "ОбъектСМР.ОбъектСтроит as \'Объект строительства\'"})]
+    [AssociatedDetailViewAttribute("ДокСметаE", "ТЧСмета", "ТЧСметаE", true, "", "Табличная часть сметы", true, new string[] {
+            ""})]
     [View("ДокСметаL", new string[] {
             "НомСметРасч as \'Номер сметных расчетов\'",
             "Количество as \'Количество\'",
             "ЦенаЗаЕд as \'Цена за единицу\'",
-            "ОбщСметСтои as \'Общая сметная стоимость\'"})]
+            "ОбщСметСтои as \'Общая сметная стоимость\'",
+            "ОбъектСМР.ОбъектСтроит as \'Объект строительства\'"})]
     public class ДокСмета : ICSSoft.STORMNET.DataObject
     {
         
@@ -49,6 +54,12 @@ namespace IIS.Proekt
         private float fЦенаЗаЕд;
         
         private int fНомСметРасч;
+        
+        private float fОбРабПоСмет;
+        
+        private IIS.Proekt.ОбъектСМР fОбъектСМР;
+        
+        private IIS.Proekt.DetailArrayOfТЧСмета fТЧСмета;
         
         // *** Start programmer edit section *** (ДокСмета CustomMembers)
 
@@ -118,6 +129,37 @@ namespace IIS.Proekt
         }
         
         /// <summary>
+        /// ОбРабПоСмет.
+        /// </summary>
+        // *** Start programmer edit section *** (ДокСмета.ОбРабПоСмет CustomAttributes)
+
+        // *** End programmer edit section *** (ДокСмета.ОбРабПоСмет CustomAttributes)
+        public virtual float ОбРабПоСмет
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ДокСмета.ОбРабПоСмет Get start)
+
+                // *** End programmer edit section *** (ДокСмета.ОбРабПоСмет Get start)
+                float result = this.fОбРабПоСмет;
+                // *** Start programmer edit section *** (ДокСмета.ОбРабПоСмет Get end)
+
+                // *** End programmer edit section *** (ДокСмета.ОбРабПоСмет Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ДокСмета.ОбРабПоСмет Set start)
+
+                // *** End programmer edit section *** (ДокСмета.ОбРабПоСмет Set start)
+                this.fОбРабПоСмет = value;
+                // *** Start programmer edit section *** (ДокСмета.ОбРабПоСмет Set end)
+
+                // *** End programmer edit section *** (ДокСмета.ОбРабПоСмет Set end)
+            }
+        }
+        
+        /// <summary>
         /// ОбщСметСтои.
         /// </summary>
         // *** Start programmer edit section *** (ДокСмета.ОбщСметСтои CustomAttributes)
@@ -176,6 +218,75 @@ namespace IIS.Proekt
                 // *** Start programmer edit section *** (ДокСмета.ЦенаЗаЕд Set end)
 
                 // *** End programmer edit section *** (ДокСмета.ЦенаЗаЕд Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Док смета.
+        /// </summary>
+        // *** Start programmer edit section *** (ДокСмета.ОбъектСМР CustomAttributes)
+
+        // *** End programmer edit section *** (ДокСмета.ОбъектСМР CustomAttributes)
+        [PropertyStorage(new string[] {
+                "ОбъектСМР"})]
+        [NotNull()]
+        public virtual IIS.Proekt.ОбъектСМР ОбъектСМР
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ДокСмета.ОбъектСМР Get start)
+
+                // *** End programmer edit section *** (ДокСмета.ОбъектСМР Get start)
+                IIS.Proekt.ОбъектСМР result = this.fОбъектСМР;
+                // *** Start programmer edit section *** (ДокСмета.ОбъектСМР Get end)
+
+                // *** End programmer edit section *** (ДокСмета.ОбъектСМР Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ДокСмета.ОбъектСМР Set start)
+
+                // *** End programmer edit section *** (ДокСмета.ОбъектСМР Set start)
+                this.fОбъектСМР = value;
+                // *** Start programmer edit section *** (ДокСмета.ОбъектСМР Set end)
+
+                // *** End programmer edit section *** (ДокСмета.ОбъектСМР Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Док смета.
+        /// </summary>
+        // *** Start programmer edit section *** (ДокСмета.ТЧСмета CustomAttributes)
+
+        // *** End programmer edit section *** (ДокСмета.ТЧСмета CustomAttributes)
+        public virtual IIS.Proekt.DetailArrayOfТЧСмета ТЧСмета
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ДокСмета.ТЧСмета Get start)
+
+                // *** End programmer edit section *** (ДокСмета.ТЧСмета Get start)
+                if ((this.fТЧСмета == null))
+                {
+                    this.fТЧСмета = new IIS.Proekt.DetailArrayOfТЧСмета(this);
+                }
+                IIS.Proekt.DetailArrayOfТЧСмета result = this.fТЧСмета;
+                // *** Start programmer edit section *** (ДокСмета.ТЧСмета Get end)
+
+                // *** End programmer edit section *** (ДокСмета.ТЧСмета Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ДокСмета.ТЧСмета Set start)
+
+                // *** End programmer edit section *** (ДокСмета.ТЧСмета Set start)
+                this.fТЧСмета = value;
+                // *** Start programmer edit section *** (ДокСмета.ТЧСмета Set end)
+
+                // *** End programmer edit section *** (ДокСмета.ТЧСмета Set end)
             }
         }
         

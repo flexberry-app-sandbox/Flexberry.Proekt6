@@ -46,6 +46,8 @@ namespace IIS.Proekt
         
         private float fСтоимМонРаб;
         
+        private IIS.Proekt.ДокСмета fДокСмета;
+        
         // *** Start programmer edit section *** (ТЧСмета CustomMembers)
 
         // *** End programmer edit section *** (ТЧСмета CustomMembers)
@@ -145,6 +147,41 @@ namespace IIS.Proekt
         }
         
         /// <summary>
+        /// мастеровая ссылка на шапку IIS.Proekt.ДокСмета.
+        /// </summary>
+        // *** Start programmer edit section *** (ТЧСмета.ДокСмета CustomAttributes)
+
+        // *** End programmer edit section *** (ТЧСмета.ДокСмета CustomAttributes)
+        [Agregator()]
+        [NotNull()]
+        [PropertyStorage(new string[] {
+                "ДокСмета"})]
+        public virtual IIS.Proekt.ДокСмета ДокСмета
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ТЧСмета.ДокСмета Get start)
+
+                // *** End programmer edit section *** (ТЧСмета.ДокСмета Get start)
+                IIS.Proekt.ДокСмета result = this.fДокСмета;
+                // *** Start programmer edit section *** (ТЧСмета.ДокСмета Get end)
+
+                // *** End programmer edit section *** (ТЧСмета.ДокСмета Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ТЧСмета.ДокСмета Set start)
+
+                // *** End programmer edit section *** (ТЧСмета.ДокСмета Set start)
+                this.fДокСмета = value;
+                // *** Start programmer edit section *** (ТЧСмета.ДокСмета Set end)
+
+                // *** End programmer edit section *** (ТЧСмета.ДокСмета Set end)
+            }
+        }
+        
+        /// <summary>
         /// Class views container.
         /// </summary>
         public class Views
@@ -171,6 +208,48 @@ namespace IIS.Proekt
                     return ICSSoft.STORMNET.Information.GetView("ТЧСметаL", typeof(IIS.Proekt.ТЧСмета));
                 }
             }
+        }
+    }
+    
+    /// <summary>
+    /// Detail array of ТЧСмета.
+    /// </summary>
+    // *** Start programmer edit section *** (DetailArrayDetailArrayOfТЧСмета CustomAttributes)
+
+    // *** End programmer edit section *** (DetailArrayDetailArrayOfТЧСмета CustomAttributes)
+    public class DetailArrayOfТЧСмета : ICSSoft.STORMNET.DetailArray
+    {
+        
+        // *** Start programmer edit section *** (IIS.Proekt.DetailArrayOfТЧСмета members)
+
+        // *** End programmer edit section *** (IIS.Proekt.DetailArrayOfТЧСмета members)
+
+        
+        /// <summary>
+        /// Construct detail array.
+        /// </summary>
+        /// <summary>
+        /// Returns object with type ТЧСмета by index.
+        /// </summary>
+        /// <summary>
+        /// Adds object with type ТЧСмета.
+        /// </summary>
+        public DetailArrayOfТЧСмета(IIS.Proekt.ДокСмета fДокСмета) : 
+                base(typeof(ТЧСмета), ((ICSSoft.STORMNET.DataObject)(fДокСмета)))
+        {
+        }
+        
+        public IIS.Proekt.ТЧСмета this[int index]
+        {
+            get
+            {
+                return ((IIS.Proekt.ТЧСмета)(this.ItemByIndex(index)));
+            }
+        }
+        
+        public virtual void Add(IIS.Proekt.ТЧСмета dataobject)
+        {
+            this.AddObject(((ICSSoft.STORMNET.DataObject)(dataobject)));
         }
     }
 }

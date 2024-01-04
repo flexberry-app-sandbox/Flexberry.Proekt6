@@ -25,6 +25,15 @@
       "ordered": false
     },
     {
+      "name": "обРабПоСмет",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
       "name": "общСметСтои",
       "type": "decimal",
       "flexberryType": "float",
@@ -43,8 +52,22 @@
       "ordered": false
     }
   ],
-  "belongsTo": [],
-  "hasMany": [],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "объектСМР",
+      "relatedTo": "i-i-s-proekt-объект-с-м-р",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "тЧСмета",
+      "relatedTo": "i-i-s-proekt-т-ч-смета",
+      "inverse": "докСмета"
+    }
+  ],
   "projections": [
     {
       "name": "ДокСметаE",
@@ -75,8 +98,38 @@
           "index": 3
         }
       ],
-      "belongsTo": [],
-      "hasMany": []
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ОбъектСМР",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "объектСтроит",
+              "caption": "Объект строительства",
+              "hidden": false,
+              "index": 5
+            }
+          ],
+          "index": 4,
+          "type": "default",
+          "caption": "Объект строительства",
+          "name": "объектСМР",
+          "relatedTo": "i-i-s-proekt-объект-с-м-р",
+          "inverse": null
+        }
+      ],
+      "hasMany": [
+        {
+          "projectionName": "ТЧСметаE",
+          "caption": "Табличная часть сметы",
+          "name": "тЧСмета",
+          "relatedTo": "i-i-s-proekt-т-ч-смета",
+          "inverse": null
+        }
+      ]
     },
     {
       "name": "ДокСметаL",
@@ -107,7 +160,29 @@
           "index": 3
         }
       ],
-      "belongsTo": [],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ОбъектСМР",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "объектСтроит",
+              "caption": "Объект строительства",
+              "hidden": false,
+              "index": 4
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Объект строительства",
+          "name": "объектСМР",
+          "relatedTo": "i-i-s-proekt-объект-с-м-р",
+          "inverse": null
+        }
+      ],
       "hasMany": []
     }
   ],

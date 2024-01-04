@@ -34,7 +34,15 @@
       "ordered": false
     }
   ],
-  "belongsTo": [],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "докСмета",
+      "relatedTo": "i-i-s-proekt-док-смета",
+      "inverse": "тЧСмета"
+    }
+  ],
   "hasMany": [],
   "projections": [
     {
