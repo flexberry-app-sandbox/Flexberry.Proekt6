@@ -1,0 +1,96 @@
+﻿{
+  "name": "IISProektНоменклатура",
+  "modelName": "i-i-s-proekt-номенклатура",
+  "className": "Номенклатура",
+  "nameSpace": "IIS.Proekt",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "код",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "наименов",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "описание",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "НоменклатураE",
+      "modelName": "i-i-s-proekt-номенклатура",
+      "attrs": [
+        {
+          "name": "код",
+          "caption": "Код",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "наименов",
+          "caption": "Наименование",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "описание",
+          "caption": "Описание",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "НоменклатураL",
+      "modelName": "i-i-s-proekt-номенклатура",
+      "attrs": [
+        {
+          "name": "код",
+          "caption": "Код",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "наименов",
+          "caption": "Наименование",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "описание",
+          "caption": "Описание",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

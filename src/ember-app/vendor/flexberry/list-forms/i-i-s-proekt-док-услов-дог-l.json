@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-proekt-док-услов-дог-e",
+  "editForm": "i-i-s-proekt-док-услов-дог-e",
+  "external": false,
+  "caption": "Документ условия договора",
+  "name": "IISProektДокУсловДогL",
+  "className": "ДокУсловДогL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-proekt-док-услов-дог",
+      "modelProjection": "ДокУсловДогL"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Справочник должности",
+  "name": "IISProektСпраДолжносE",
+  "className": "СпраДолжносE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-proekt-спра-должнос",
+      "modelProjection": "СпраДолжносE"
+    }
+  ]
+}

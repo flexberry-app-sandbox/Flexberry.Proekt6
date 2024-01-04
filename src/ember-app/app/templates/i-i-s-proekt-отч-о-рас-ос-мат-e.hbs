@@ -1,0 +1,57 @@
+<h3 class="ui header">{{t "forms.i-i-s-proekt-отч-о-рас-ос-мат-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.нормаРасхода
+      class=(if (v-get validationModel "нормаРасхода" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-отч-о-рас-ос-мат-e.нормаРасхода-caption")
+      data-test-i-i-s-proekt-отч-о-рас-ос-мат-e-нормаРасхода=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "нормаРасхода" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.колПоАктТек
+      class=(if (v-get validationModel "колПоАктТек" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-отч-о-рас-ос-мат-e.колПоАктТек-caption")
+      data-test-i-i-s-proekt-отч-о-рас-ос-мат-e-колПоАктТек=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "колПоАктТек" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.суммаИтого
+      class=(if (v-get validationModel "суммаИтого" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-отч-о-рас-ос-мат-e.суммаИтого-caption")
+      data-test-i-i-s-proekt-отч-о-рас-ос-мат-e-суммаИтого=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "суммаИтого" "message")}}
+  </div>
+</form>

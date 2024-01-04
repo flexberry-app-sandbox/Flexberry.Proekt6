@@ -1,0 +1,73 @@
+<h3 class="ui header">{{t "forms.i-i-s-proekt-сотрудники-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.табелНомер
+      class=(if (v-get validationModel "табелНомер" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-сотрудники-e.табелНомер-caption")
+      data-test-i-i-s-proekt-сотрудники-e-табелНомер=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "табелНомер" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.фИО
+      class=(if (v-get validationModel "фИО" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-сотрудники-e.фИО-caption")
+      data-test-i-i-s-proekt-сотрудники-e-фИО=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "фИО" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-proekt-сотрудники-e.спраДолжнос-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.спраДолжнос
+      relationName="спраДолжнос"
+      projection="СпраДолжносL"
+      title=(t "forms.i-i-s-proekt-сотрудники-e.спраДолжнос-caption")
+      readonly=readonly
+      componentName="спраДолжносLookup"
+      class=(if (v-get validationModel "спраДолжнос" "isInvalid") "error")
+      data-test-i-i-s-proekt-сотрудники-e-спраДолжнос=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "спраДолжнос" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.спраДолжнос.наименование
+      class=(if (v-get validationModel.спраДолжнос "наименование" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-сотрудники-e.спраДолжнос.наименование-caption")
+      data-test-i-i-s-proekt-сотрудники-e-спраДолжнос-наименование=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.спраДолжнос "наименование" "message")}}
+  </div>
+</form>

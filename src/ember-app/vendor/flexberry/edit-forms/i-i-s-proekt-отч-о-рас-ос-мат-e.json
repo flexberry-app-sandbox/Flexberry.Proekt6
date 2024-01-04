@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Отчет о расходах основных материалов",
+  "name": "IISProektОтчОРасОсМатE",
+  "className": "ОтчОРасОсМатE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-proekt-отч-о-рас-ос-мат",
+      "modelProjection": "ОтчОРасОсМатE"
+    }
+  ]
+}

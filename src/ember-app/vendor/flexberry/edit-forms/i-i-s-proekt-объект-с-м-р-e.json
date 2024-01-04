@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Объекты СМР",
+  "name": "IISProektОбъектСМРE",
+  "className": "ОбъектСМРE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-proekt-объект-с-м-р",
+      "modelProjection": "ОбъектСМРE"
+    }
+  ]
+}

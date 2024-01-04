@@ -1,0 +1,99 @@
+﻿{
+  "applicationCaption": "Proekt",
+  "applicationTitle": "Proekt",
+  "items": [
+    {
+      "link": null,
+      "menuName": "proekt",
+      "caption": "Proekt",
+      "title": "Proekt",
+      "children": [
+        {
+          "link": "i-i-s-proekt-отч-о-рас-ос-мат-l",
+          "menuName": null,
+          "caption": "Отчет о расходах основных материалов",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-proekt-расх-мат-в-стро-l",
+          "menuName": null,
+          "caption": "Расход материалов в строительстве",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-proekt-док-смета-l",
+          "menuName": null,
+          "caption": "Документ смета",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-proekt-объект-с-м-р-l",
+          "menuName": null,
+          "caption": "Объекты СМР",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-proekt-ед-измерен-l",
+          "menuName": null,
+          "caption": "Единицы измерения",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-proekt-от-по-вып-догов-l",
+          "menuName": null,
+          "caption": "Отчет по выполнению договоров",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-proekt-номенклатура-l",
+          "menuName": null,
+          "caption": "Номенклатура",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-proekt-спра-должнос-l",
+          "menuName": null,
+          "caption": "Справочник должности",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-proekt-док-услов-дог-l",
+          "menuName": null,
+          "caption": "Документ условия договора",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-proekt-сотрудники-l",
+          "menuName": null,
+          "caption": "Сотрудники",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-proekt-спр-контраг-l",
+          "menuName": null,
+          "caption": "Справочник контрагент",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-proekt-т-ч-смета-l",
+          "menuName": null,
+          "caption": "Табличная часть сметы",
+          "title": "",
+          "children": null
+        }
+      ]
+    }
+  ],
+  "mobile": true
+}

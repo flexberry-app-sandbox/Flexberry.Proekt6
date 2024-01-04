@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Справочник контрагенты",
+  "name": "IISProektСпрКонтрагE",
+  "className": "СпрКонтрагE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "справочник-контрагенты",
+      "modelProjection": "СпрКонтрагE"
+    }
+  ]
+}

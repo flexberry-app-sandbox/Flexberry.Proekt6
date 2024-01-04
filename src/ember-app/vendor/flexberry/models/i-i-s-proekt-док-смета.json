@@ -1,0 +1,117 @@
+﻿{
+  "name": "IISProektДокСмета",
+  "modelName": "i-i-s-proekt-док-смета",
+  "className": "ДокСмета",
+  "nameSpace": "IIS.Proekt",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "количество",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "номСметРасч",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "общСметСтои",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "ценаЗаЕд",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ДокСметаE",
+      "modelName": "i-i-s-proekt-док-смета",
+      "attrs": [
+        {
+          "name": "номСметРасч",
+          "caption": "Номер сметных расчетов",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "количество",
+          "caption": "Количество",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "ценаЗаЕд",
+          "caption": "Цена за единицу",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "общСметСтои",
+          "caption": "Общая сметная стоимость",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "ДокСметаL",
+      "modelName": "i-i-s-proekt-док-смета",
+      "attrs": [
+        {
+          "name": "номСметРасч",
+          "caption": "Номер сметных расчетов",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "количество",
+          "caption": "Количество",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "ценаЗаЕд",
+          "caption": "Цена за единицу",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "общСметСтои",
+          "caption": "Общая сметная стоимость",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

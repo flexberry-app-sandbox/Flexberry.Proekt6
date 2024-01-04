@@ -1,0 +1,15 @@
+﻿{
+  "newForm": null,
+  "editForm": null,
+  "external": false,
+  "caption": "Отчет о расходах основных материалов",
+  "name": "IISProektОтчОРасОсМатL",
+  "className": "ОтчОРасОсМатL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-proekt-отч-о-рас-ос-мат",
+      "modelProjection": "ОтчОРасОсМатL"
+    }
+  ]
+}

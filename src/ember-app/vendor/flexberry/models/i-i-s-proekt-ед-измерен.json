@@ -1,0 +1,96 @@
+﻿{
+  "name": "IISProektЕдИзмерен",
+  "modelName": "i-i-s-proekt-ед-измерен",
+  "className": "ЕдИзмерен",
+  "nameSpace": "IIS.Proekt",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "код",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "наименование",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "полноеИмя",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ЕдИзмеренE",
+      "modelName": "i-i-s-proekt-ед-измерен",
+      "attrs": [
+        {
+          "name": "код",
+          "caption": "Код",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "наименование",
+          "caption": "Наименование",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "полноеИмя",
+          "caption": "Полное имя",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "ЕдИзмеренL",
+      "modelName": "i-i-s-proekt-ед-измерен",
+      "attrs": [
+        {
+          "name": "код",
+          "caption": "Код",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "наименование",
+          "caption": "Наименование",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "полноеИмя",
+          "caption": "Полное имя",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

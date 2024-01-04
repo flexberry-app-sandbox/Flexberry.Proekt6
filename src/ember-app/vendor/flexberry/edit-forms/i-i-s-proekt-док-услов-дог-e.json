@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Документ условия договора",
+  "name": "IISProektДокУсловДогE",
+  "className": "ДокУсловДогE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-proekt-док-услов-дог",
+      "modelProjection": "ДокУсловДогE"
+    }
+  ]
+}

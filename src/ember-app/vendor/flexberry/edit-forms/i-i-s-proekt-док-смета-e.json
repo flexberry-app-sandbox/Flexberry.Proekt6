@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Документ смета",
+  "name": "IISProektДокСметаE",
+  "className": "ДокСметаE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-proekt-док-смета",
+      "modelProjection": "ДокСметаE"
+    }
+  ]
+}

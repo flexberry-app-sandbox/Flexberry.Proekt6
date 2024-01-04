@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Расход материалов в строительстве",
+  "name": "IISProektРасхМатВСтроE",
+  "className": "РасхМатВСтроE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-proekt-расх-мат-в-стро",
+      "modelProjection": "РасхМатВСтроE"
+    }
+  ]
+}

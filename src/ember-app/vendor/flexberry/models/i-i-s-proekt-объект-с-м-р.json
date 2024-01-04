@@ -1,0 +1,75 @@
+﻿{
+  "name": "IISProektОбъектСМР",
+  "modelName": "i-i-s-proekt-объект-с-м-р",
+  "className": "ОбъектСМР",
+  "nameSpace": "IIS.Proekt",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "код",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "объектСтроит",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ОбъектСМРE",
+      "modelName": "i-i-s-proekt-объект-с-м-р",
+      "attrs": [
+        {
+          "name": "код",
+          "caption": "Код",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "объектСтроит",
+          "caption": "Объект строительства",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "ОбъектСМРL",
+      "modelName": "i-i-s-proekt-объект-с-м-р",
+      "attrs": [
+        {
+          "name": "код",
+          "caption": "Код",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "объектСтроит",
+          "caption": "Объект строительства",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

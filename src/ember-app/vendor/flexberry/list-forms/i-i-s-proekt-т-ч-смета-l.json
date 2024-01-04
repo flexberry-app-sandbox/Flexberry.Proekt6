@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-proekt-т-ч-смета-e",
+  "editForm": "i-i-s-proekt-т-ч-смета-e",
+  "external": false,
+  "caption": "Табличная часть сметы",
+  "name": "IISProektТЧСметаL",
+  "className": "ТЧСметаL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-proekt-т-ч-смета",
+      "modelProjection": "ТЧСметаL"
+    }
+  ]
+}

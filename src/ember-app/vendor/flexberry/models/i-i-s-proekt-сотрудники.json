@@ -1,0 +1,169 @@
+﻿{
+  "name": "IISProektСотрудники",
+  "modelName": "i-i-s-proekt-сотрудники",
+  "className": "Сотрудники",
+  "nameSpace": "IIS.Proekt",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "табелНомер",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "фИО",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "спраДолжнос",
+      "relatedTo": "i-i-s-proekt-спра-должнос",
+      "inverse": null
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ДолжностьL",
+      "modelName": "i-i-s-proekt-сотрудники",
+      "attrs": [
+        {
+          "name": "табелНомер",
+          "caption": "Табельный номер",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "фИО",
+          "caption": "ФИО",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "СпраДолжнос",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Должность",
+              "hidden": false,
+              "index": 2
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Должность",
+          "name": "спраДолжнос",
+          "relatedTo": "i-i-s-proekt-спра-должнос",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    },
+    {
+      "name": "СотрудникиE",
+      "modelName": "i-i-s-proekt-сотрудники",
+      "attrs": [
+        {
+          "name": "табелНомер",
+          "caption": "Табельный номер",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "фИО",
+          "caption": "ФИО",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "СпраДолжнос",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Должность",
+              "hidden": false,
+              "index": 3
+            }
+          ],
+          "index": 2,
+          "type": "default",
+          "caption": "Должность",
+          "name": "спраДолжнос",
+          "relatedTo": "i-i-s-proekt-спра-должнос",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    },
+    {
+      "name": "СотрудникиL",
+      "modelName": "i-i-s-proekt-сотрудники",
+      "attrs": [
+        {
+          "name": "табелНомер",
+          "caption": "Табел номер",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "фИО",
+          "caption": "ФИО",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "СпраДолжнос",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Наименование",
+              "hidden": false,
+              "index": 2
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Наименование",
+          "name": "спраДолжнос",
+          "relatedTo": "i-i-s-proekt-спра-должнос",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-proekt-расх-мат-в-стро-e",
+  "editForm": "i-i-s-proekt-расх-мат-в-стро-e",
+  "external": false,
+  "caption": "Расход материалов в строительстве",
+  "name": "IISProektРасхМатВСтроL",
+  "className": "РасхМатВСтроL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-proekt-расх-мат-в-стро",
+      "modelProjection": "РасхМатВСтроL"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+﻿{
+  "name": "IISProektРасхМатВСтро",
+  "modelName": "i-i-s-proekt-расх-мат-в-стро",
+  "className": "РасхМатВСтро",
+  "nameSpace": "IIS.Proekt",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "кодСДР",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "количество",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "объем",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "суммаИтого",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "ценаЗаЕд",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "РасхМатВСтроE",
+      "modelName": "i-i-s-proekt-расх-мат-в-стро",
+      "attrs": [
+        {
+          "name": "кодСДР",
+          "caption": "Код СДР",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "объем",
+          "caption": "Объем",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "количество",
+          "caption": "Количество",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "ценаЗаЕд",
+          "caption": "Цена за единицу",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "суммаИтого",
+          "caption": "Сумма итого",
+          "hidden": false,
+          "index": 4
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "РасхМатВСтроL",
+      "modelName": "i-i-s-proekt-расх-мат-в-стро",
+      "attrs": [
+        {
+          "name": "кодСДР",
+          "caption": "Код СДР",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "объем",
+          "caption": "Объем",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "количество",
+          "caption": "Количество",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "ценаЗаЕд",
+          "caption": "Цена за единицу",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "суммаИтого",
+          "caption": "Сумма итого",
+          "hidden": false,
+          "index": 4
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

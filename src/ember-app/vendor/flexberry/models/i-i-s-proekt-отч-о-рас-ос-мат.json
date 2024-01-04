@@ -1,0 +1,96 @@
+﻿{
+  "name": "IISProektОтчОРасОсМат",
+  "modelName": "i-i-s-proekt-отч-о-рас-ос-мат",
+  "className": "ОтчОРасОсМат",
+  "nameSpace": "IIS.Proekt",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "колПоАктТек",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "нормаРасхода",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "суммаИтого",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ОтчОРасОсМатE",
+      "modelName": "i-i-s-proekt-отч-о-рас-ос-мат",
+      "attrs": [
+        {
+          "name": "нормаРасхода",
+          "caption": "Норма расхода",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "колПоАктТек",
+          "caption": "Количество по актам текущий",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "суммаИтого",
+          "caption": "Сумма итого",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "ОтчОРасОсМатL",
+      "modelName": "i-i-s-proekt-отч-о-рас-ос-мат",
+      "attrs": [
+        {
+          "name": "нормаРасхода",
+          "caption": "Норма расхода",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "колПоАктТек",
+          "caption": "Количество по актам текущий",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "суммаИтого",
+          "caption": "Сумма итого",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

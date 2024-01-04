@@ -1,0 +1,117 @@
+﻿{
+  "name": "IISProektДокУсловДог",
+  "modelName": "i-i-s-proekt-док-услов-дог",
+  "className": "ДокУсловДог",
+  "nameSpace": "IIS.Proekt",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "датаНачала",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "датаОкончан",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "длительность",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "сумПоДогов",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ДокУсловДогE",
+      "modelName": "i-i-s-proekt-док-услов-дог",
+      "attrs": [
+        {
+          "name": "датаНачала",
+          "caption": "Дата начала",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "датаОкончан",
+          "caption": "Дата окончания",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "длительность",
+          "caption": "Длительность",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "сумПоДогов",
+          "caption": "Сумма по договору",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "ДокУсловДогL",
+      "modelName": "i-i-s-proekt-док-услов-дог",
+      "attrs": [
+        {
+          "name": "датаНачала",
+          "caption": "Дата начала",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "датаОкончан",
+          "caption": "Дата окончания",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "длительность",
+          "caption": "Длительность",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "сумПоДогов",
+          "caption": "Сумма по договору",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

@@ -1,0 +1,96 @@
+﻿{
+  "name": "IISProektТЧСмета",
+  "modelName": "i-i-s-proekt-т-ч-смета",
+  "className": "ТЧСмета",
+  "nameSpace": "IIS.Proekt",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "стоимМонРаб",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "стоимОборуд",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "стоимСтроРаб",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ТЧСметаE",
+      "modelName": "i-i-s-proekt-т-ч-смета",
+      "attrs": [
+        {
+          "name": "стоимСтроРаб",
+          "caption": "Стоимость строительных работ",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "стоимМонРаб",
+          "caption": "Стоимость монтажных работ",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "стоимОборуд",
+          "caption": "Стоимость оборудования",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "ТЧСметаL",
+      "modelName": "i-i-s-proekt-т-ч-смета",
+      "attrs": [
+        {
+          "name": "стоимСтроРаб",
+          "caption": "Стоимость строительных работ",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "стоимМонРаб",
+          "caption": "Стоимость монтажных работ",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "стоимОборуд",
+          "caption": "Стоимость оборудования",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

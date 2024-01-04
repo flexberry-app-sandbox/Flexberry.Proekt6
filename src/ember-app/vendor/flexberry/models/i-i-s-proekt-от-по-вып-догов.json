@@ -1,0 +1,75 @@
+﻿{
+  "name": "IISProektОтПоВыпДогов",
+  "modelName": "i-i-s-proekt-от-по-вып-догов",
+  "className": "ОтПоВыпДогов",
+  "nameSpace": "IIS.Proekt",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "выполнение",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "сумКонечОстат",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ОтПоВыпДоговE",
+      "modelName": "i-i-s-proekt-от-по-вып-догов",
+      "attrs": [
+        {
+          "name": "выполнение",
+          "caption": "Выполнение",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "сумКонечОстат",
+          "caption": "Сумма конечный остаток",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "ОтПоВыпДоговL",
+      "modelName": "i-i-s-proekt-от-по-вып-догов",
+      "attrs": [
+        {
+          "name": "выполнение",
+          "caption": "Выполнение",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "сумКонечОстат",
+          "caption": "Сумма конечный остаток",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

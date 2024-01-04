@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Отчет по выполнению договоров",
+  "name": "IISProektОтПоВыпДоговE",
+  "className": "ОтПоВыпДоговE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-proekt-от-по-вып-догов",
+      "modelProjection": "ОтПоВыпДоговE"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-proekt-ед-измерен-e",
+  "editForm": "i-i-s-proekt-ед-измерен-e",
+  "external": false,
+  "caption": "Единицы измерения",
+  "name": "IISProektЕдИзмеренL",
+  "className": "ЕдИзмеренL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-proekt-ед-измерен",
+      "modelProjection": "ЕдИзмеренL"
+    }
+  ]
+}

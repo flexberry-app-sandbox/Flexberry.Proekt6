@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-proekt-от-по-вып-догов-e",
+  "editForm": "i-i-s-proekt-от-по-вып-догов-e",
+  "external": false,
+  "caption": "Отчет по выполнению договоров",
+  "name": "IISProektОтПоВыпДоговL",
+  "className": "ОтПоВыпДоговL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-proekt-от-по-вып-догов",
+      "modelProjection": "ОтПоВыпДоговL"
+    }
+  ]
+}
