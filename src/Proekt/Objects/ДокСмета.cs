@@ -35,7 +35,13 @@ namespace IIS.Proekt
             "ЦенаЗаЕд as \'Цена за единицу\'",
             "ОбщСметСтои as \'Общая сметная стоимость\'",
             "ОбъектСМР as \'Объект строительства\'",
-            "ОбъектСМР.ОбъектСтроит as \'Объект строительства\'"})]
+            "ОбъектСМР.ОбъектСтроит as \'Объект строительства\'",
+            "Номенклатура as \'Номенклатура\'",
+            "Номенклатура.Наименов as \'Номенклатура\'",
+            "СпрКонтраг as \'Контрагент\'",
+            "СпрКонтраг.Наименование as \'Контрагент\'",
+            "ЕдИзмерен as \'Единицы измерения\'",
+            "ЕдИзмерен.Наименование as \'Единицы измерения\'"})]
     [AssociatedDetailViewAttribute("ДокСметаE", "ТЧСмета", "ТЧСметаE", true, "", "Табличная часть сметы", true, new string[] {
             ""})]
     [View("ДокСметаL", new string[] {
@@ -43,7 +49,10 @@ namespace IIS.Proekt
             "Количество as \'Количество\'",
             "ЦенаЗаЕд as \'Цена за единицу\'",
             "ОбщСметСтои as \'Общая сметная стоимость\'",
-            "ОбъектСМР.ОбъектСтроит as \'Объект строительства\'"})]
+            "ОбъектСМР.ОбъектСтроит as \'Объект строительства\'",
+            "Номенклатура.Наименов as \'Номенклатура\'",
+            "СпрКонтраг.Наименование as \'Контрагент\'",
+            "ЕдИзмерен.Наименование as \'Единицы измерения\'"})]
     public class ДокСмета : ICSSoft.STORMNET.DataObject
     {
         
@@ -57,7 +66,13 @@ namespace IIS.Proekt
         
         private float fОбРабПоСмет;
         
+        private IIS.Proekt.ЕдИзмерен fЕдИзмерен;
+        
         private IIS.Proekt.ОбъектСМР fОбъектСМР;
+        
+        private IIS.Proekt.СпрКонтраг fСпрКонтраг;
+        
+        private IIS.Proekt.Номенклатура fНоменклатура;
         
         private IIS.Proekt.DetailArrayOfТЧСмета fТЧСмета;
         
@@ -224,6 +239,74 @@ namespace IIS.Proekt
         /// <summary>
         /// Док смета.
         /// </summary>
+        // *** Start programmer edit section *** (ДокСмета.ЕдИзмерен CustomAttributes)
+
+        // *** End programmer edit section *** (ДокСмета.ЕдИзмерен CustomAttributes)
+        [PropertyStorage(new string[] {
+                "ЕдИзмерен"})]
+        [NotNull()]
+        public virtual IIS.Proekt.ЕдИзмерен ЕдИзмерен
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ДокСмета.ЕдИзмерен Get start)
+
+                // *** End programmer edit section *** (ДокСмета.ЕдИзмерен Get start)
+                IIS.Proekt.ЕдИзмерен result = this.fЕдИзмерен;
+                // *** Start programmer edit section *** (ДокСмета.ЕдИзмерен Get end)
+
+                // *** End programmer edit section *** (ДокСмета.ЕдИзмерен Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ДокСмета.ЕдИзмерен Set start)
+
+                // *** End programmer edit section *** (ДокСмета.ЕдИзмерен Set start)
+                this.fЕдИзмерен = value;
+                // *** Start programmer edit section *** (ДокСмета.ЕдИзмерен Set end)
+
+                // *** End programmer edit section *** (ДокСмета.ЕдИзмерен Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Док смета.
+        /// </summary>
+        // *** Start programmer edit section *** (ДокСмета.Номенклатура CustomAttributes)
+
+        // *** End programmer edit section *** (ДокСмета.Номенклатура CustomAttributes)
+        [PropertyStorage(new string[] {
+                "Номенклатура"})]
+        [NotNull()]
+        public virtual IIS.Proekt.Номенклатура Номенклатура
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ДокСмета.Номенклатура Get start)
+
+                // *** End programmer edit section *** (ДокСмета.Номенклатура Get start)
+                IIS.Proekt.Номенклатура result = this.fНоменклатура;
+                // *** Start programmer edit section *** (ДокСмета.Номенклатура Get end)
+
+                // *** End programmer edit section *** (ДокСмета.Номенклатура Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ДокСмета.Номенклатура Set start)
+
+                // *** End programmer edit section *** (ДокСмета.Номенклатура Set start)
+                this.fНоменклатура = value;
+                // *** Start programmer edit section *** (ДокСмета.Номенклатура Set end)
+
+                // *** End programmer edit section *** (ДокСмета.Номенклатура Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Док смета.
+        /// </summary>
         // *** Start programmer edit section *** (ДокСмета.ОбъектСМР CustomAttributes)
 
         // *** End programmer edit section *** (ДокСмета.ОбъектСМР CustomAttributes)
@@ -252,6 +335,40 @@ namespace IIS.Proekt
                 // *** Start programmer edit section *** (ДокСмета.ОбъектСМР Set end)
 
                 // *** End programmer edit section *** (ДокСмета.ОбъектСМР Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Док смета.
+        /// </summary>
+        // *** Start programmer edit section *** (ДокСмета.СпрКонтраг CustomAttributes)
+
+        // *** End programmer edit section *** (ДокСмета.СпрКонтраг CustomAttributes)
+        [PropertyStorage(new string[] {
+                "СпрКонтраг"})]
+        [NotNull()]
+        public virtual IIS.Proekt.СпрКонтраг СпрКонтраг
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ДокСмета.СпрКонтраг Get start)
+
+                // *** End programmer edit section *** (ДокСмета.СпрКонтраг Get start)
+                IIS.Proekt.СпрКонтраг result = this.fСпрКонтраг;
+                // *** Start programmer edit section *** (ДокСмета.СпрКонтраг Get end)
+
+                // *** End programmer edit section *** (ДокСмета.СпрКонтраг Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ДокСмета.СпрКонтраг Set start)
+
+                // *** End programmer edit section *** (ДокСмета.СпрКонтраг Set start)
+                this.fСпрКонтраг = value;
+                // *** Start programmer edit section *** (ДокСмета.СпрКонтраг Set end)
+
+                // *** End programmer edit section *** (ДокСмета.СпрКонтраг Set end)
             }
         }
         

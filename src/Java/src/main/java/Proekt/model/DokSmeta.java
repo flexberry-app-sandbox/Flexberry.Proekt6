@@ -39,6 +39,16 @@ public class DokSmeta {
     private Float обрабпосмет;
 
     @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "EdIzmeren")
+    @Convert("EdIzmeren")
+    @Column(name = "ЕдИзмерен", length = 16, unique = true, nullable = false)
+    private UUID _edizmerenid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "EdIzmeren", insertable = false, updatable = false)
+    private EdIzmeren edizmeren;
+
+    @EdmIgnore
     @Converter(converterClass = UUIDConverter.class, name = "Ob'ektSMR")
     @Convert("Ob'ektSMR")
     @Column(name = "ОбъектСМР", length = 16, unique = true, nullable = false)
@@ -47,6 +57,26 @@ public class DokSmeta {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "Ob'ektSMR", insertable = false, updatable = false)
     private Ob'ektSMR ob'ektsmr;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "SprKontrag")
+    @Convert("SprKontrag")
+    @Column(name = "СпрКонтраг", length = 16, unique = true, nullable = false)
+    private UUID _sprkontragid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "SprKontrag", insertable = false, updatable = false)
+    private SprKontrag sprkontrag;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "Nomenklatura")
+    @Convert("Nomenklatura")
+    @Column(name = "Номенклатура", length = 16, unique = true, nullable = false)
+    private UUID _nomenklaturaid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "Nomenklatura", insertable = false, updatable = false)
+    private Nomenklatura nomenklatura;
 
     @OneToMany(mappedBy = "doksmeta", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<TCHSmeta> tchsmetas;

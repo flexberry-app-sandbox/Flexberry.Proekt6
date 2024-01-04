@@ -31,20 +31,25 @@ namespace IIS.Proekt
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("РасхМатВСтроE", new string[] {
             "КодСДР as \'Код СДР\'",
-            "Объем as \'Объем\'",
             "Количество as \'Количество\'",
             "ЦенаЗаЕд as \'Цена за единицу\'",
-            "СуммаИтого as \'Сумма итого\'"})]
+            "СуммаИтого as \'Сумма итого\'",
+            "ДокСмета as \'Объем работ по смете\'",
+            "ДокСмета.ОбРабПоСмет as \'Объем работ по смете\'",
+            "Номенклатура as \'Номенклатура\'",
+            "Номенклатура.Наименов as \'Номенклатура\'",
+            "ЕдИзмерен as \'Единицы измерения\'",
+            "ЕдИзмерен.Наименование as \'Единицы измерения\'"})]
     [View("РасхМатВСтроL", new string[] {
             "КодСДР as \'Код СДР\'",
-            "Объем as \'Объем\'",
             "Количество as \'Количество\'",
             "ЦенаЗаЕд as \'Цена за единицу\'",
-            "СуммаИтого as \'Сумма итого\'"})]
+            "СуммаИтого as \'Сумма итого\'",
+            "ДокСмета.ОбРабПоСмет as \'Объем работ по смете\'",
+            "Номенклатура.Наименов as \'Номенклатура\'",
+            "ЕдИзмерен.Наименование as \'Единицы измерения\'"})]
     public class РасхМатВСтро : ICSSoft.STORMNET.DataObject
     {
-        
-        private float fОбъем;
         
         private float fЦенаЗаЕд;
         
@@ -53,6 +58,12 @@ namespace IIS.Proekt
         private float fКоличество;
         
         private int fКодСДР;
+        
+        private IIS.Proekt.Номенклатура fНоменклатура;
+        
+        private IIS.Proekt.ЕдИзмерен fЕдИзмерен;
+        
+        private IIS.Proekt.ДокСмета fДокСмета;
         
         // *** Start programmer edit section *** (РасхМатВСтро CustomMembers)
 
@@ -122,37 +133,6 @@ namespace IIS.Proekt
         }
         
         /// <summary>
-        /// Объем.
-        /// </summary>
-        // *** Start programmer edit section *** (РасхМатВСтро.Объем CustomAttributes)
-
-        // *** End programmer edit section *** (РасхМатВСтро.Объем CustomAttributes)
-        public virtual float Объем
-        {
-            get
-            {
-                // *** Start programmer edit section *** (РасхМатВСтро.Объем Get start)
-
-                // *** End programmer edit section *** (РасхМатВСтро.Объем Get start)
-                float result = this.fОбъем;
-                // *** Start programmer edit section *** (РасхМатВСтро.Объем Get end)
-
-                // *** End programmer edit section *** (РасхМатВСтро.Объем Get end)
-                return result;
-            }
-            set
-            {
-                // *** Start programmer edit section *** (РасхМатВСтро.Объем Set start)
-
-                // *** End programmer edit section *** (РасхМатВСтро.Объем Set start)
-                this.fОбъем = value;
-                // *** Start programmer edit section *** (РасхМатВСтро.Объем Set end)
-
-                // *** End programmer edit section *** (РасхМатВСтро.Объем Set end)
-            }
-        }
-        
-        /// <summary>
         /// СуммаИтого.
         /// </summary>
         // *** Start programmer edit section *** (РасхМатВСтро.СуммаИтого CustomAttributes)
@@ -211,6 +191,108 @@ namespace IIS.Proekt
                 // *** Start programmer edit section *** (РасхМатВСтро.ЦенаЗаЕд Set end)
 
                 // *** End programmer edit section *** (РасхМатВСтро.ЦенаЗаЕд Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Расх мат в стро.
+        /// </summary>
+        // *** Start programmer edit section *** (РасхМатВСтро.ДокСмета CustomAttributes)
+
+        // *** End programmer edit section *** (РасхМатВСтро.ДокСмета CustomAttributes)
+        [PropertyStorage(new string[] {
+                "ДокСмета"})]
+        [NotNull()]
+        public virtual IIS.Proekt.ДокСмета ДокСмета
+        {
+            get
+            {
+                // *** Start programmer edit section *** (РасхМатВСтро.ДокСмета Get start)
+
+                // *** End programmer edit section *** (РасхМатВСтро.ДокСмета Get start)
+                IIS.Proekt.ДокСмета result = this.fДокСмета;
+                // *** Start programmer edit section *** (РасхМатВСтро.ДокСмета Get end)
+
+                // *** End programmer edit section *** (РасхМатВСтро.ДокСмета Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (РасхМатВСтро.ДокСмета Set start)
+
+                // *** End programmer edit section *** (РасхМатВСтро.ДокСмета Set start)
+                this.fДокСмета = value;
+                // *** Start programmer edit section *** (РасхМатВСтро.ДокСмета Set end)
+
+                // *** End programmer edit section *** (РасхМатВСтро.ДокСмета Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Расх мат в стро.
+        /// </summary>
+        // *** Start programmer edit section *** (РасхМатВСтро.ЕдИзмерен CustomAttributes)
+
+        // *** End programmer edit section *** (РасхМатВСтро.ЕдИзмерен CustomAttributes)
+        [PropertyStorage(new string[] {
+                "ЕдИзмерен"})]
+        [NotNull()]
+        public virtual IIS.Proekt.ЕдИзмерен ЕдИзмерен
+        {
+            get
+            {
+                // *** Start programmer edit section *** (РасхМатВСтро.ЕдИзмерен Get start)
+
+                // *** End programmer edit section *** (РасхМатВСтро.ЕдИзмерен Get start)
+                IIS.Proekt.ЕдИзмерен result = this.fЕдИзмерен;
+                // *** Start programmer edit section *** (РасхМатВСтро.ЕдИзмерен Get end)
+
+                // *** End programmer edit section *** (РасхМатВСтро.ЕдИзмерен Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (РасхМатВСтро.ЕдИзмерен Set start)
+
+                // *** End programmer edit section *** (РасхМатВСтро.ЕдИзмерен Set start)
+                this.fЕдИзмерен = value;
+                // *** Start programmer edit section *** (РасхМатВСтро.ЕдИзмерен Set end)
+
+                // *** End programmer edit section *** (РасхМатВСтро.ЕдИзмерен Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Расх мат в стро.
+        /// </summary>
+        // *** Start programmer edit section *** (РасхМатВСтро.Номенклатура CustomAttributes)
+
+        // *** End programmer edit section *** (РасхМатВСтро.Номенклатура CustomAttributes)
+        [PropertyStorage(new string[] {
+                "Номенклатура"})]
+        [NotNull()]
+        public virtual IIS.Proekt.Номенклатура Номенклатура
+        {
+            get
+            {
+                // *** Start programmer edit section *** (РасхМатВСтро.Номенклатура Get start)
+
+                // *** End programmer edit section *** (РасхМатВСтро.Номенклатура Get start)
+                IIS.Proekt.Номенклатура result = this.fНоменклатура;
+                // *** Start programmer edit section *** (РасхМатВСтро.Номенклатура Get end)
+
+                // *** End programmer edit section *** (РасхМатВСтро.Номенклатура Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (РасхМатВСтро.Номенклатура Set start)
+
+                // *** End programmer edit section *** (РасхМатВСтро.Номенклатура Set start)
+                this.fНоменклатура = value;
+                // *** Start programmer edit section *** (РасхМатВСтро.Номенклатура Set end)
+
+                // *** End programmer edit section *** (РасхМатВСтро.Номенклатура Set end)
             }
         }
         

@@ -13,6 +13,12 @@ CREATE TABLE "ОтчОРасОсМат"
 
 	"СуммаИтого" FLOAT(53) NULL,
 
+	"ДокСмета" RAW(16) NOT NULL,
+
+	"Номенклатура" RAW(16) NOT NULL,
+
+	"РасхМатВСтро" RAW(16) NOT NULL,
+
 	"Сотрудники" RAW(16) NOT NULL,
 
 	 PRIMARY KEY ("primaryKey")
@@ -24,8 +30,6 @@ CREATE TABLE "РасхМатВСтро"
 
 	"primaryKey" RAW(16) NOT NULL,
 
-	"Объем" FLOAT(53) NULL,
-
 	"ЦенаЗаЕд" FLOAT(53) NULL,
 
 	"СуммаИтого" FLOAT(53) NULL,
@@ -33,6 +37,12 @@ CREATE TABLE "РасхМатВСтро"
 	"Количество" FLOAT(53) NULL,
 
 	"КодСДР" NUMBER(10) NULL,
+
+	"Номенклатура" RAW(16) NOT NULL,
+
+	"ЕдИзмерен" RAW(16) NOT NULL,
+
+	"ДокСмета" RAW(16) NOT NULL,
 
 	 PRIMARY KEY ("primaryKey")
 ) ;
@@ -53,7 +63,13 @@ CREATE TABLE "ДокСмета"
 
 	"ОбРабПоСмет" FLOAT(53) NULL,
 
+	"ЕдИзмерен" RAW(16) NOT NULL,
+
 	"ОбъектСМР" RAW(16) NOT NULL,
+
+	"СпрКонтраг" RAW(16) NOT NULL,
+
+	"Номенклатура" RAW(16) NOT NULL,
 
 	 PRIMARY KEY ("primaryKey")
 ) ;
@@ -405,14 +421,59 @@ CREATE TABLE "ApplicationLog"
 
 
 ALTER TABLE "ОтчОРасОсМат"
+	ADD CONSTRAINT "ОтчОРасОсМат__2378" FOREIGN KEY ("ДокСмета") REFERENCES "ДокСмета" ("primaryKey");
+
+CREATE INDEX "ОтчОРасОсМат__6208" on "ОтчОРасОсМат" ("ДокСмета");
+
+ALTER TABLE "ОтчОРасОсМат"
+	ADD CONSTRAINT "ОтчОРасОсМат__9535" FOREIGN KEY ("Номенклатура") REFERENCES "Номенклатура" ("primaryKey");
+
+CREATE INDEX "ОтчОРасОсМат__5166" on "ОтчОРасОсМат" ("Номенклатура");
+
+ALTER TABLE "ОтчОРасОсМат"
+	ADD CONSTRAINT "ОтчОРасОсМат_F_686" FOREIGN KEY ("РасхМатВСтро") REFERENCES "РасхМатВСтро" ("primaryKey");
+
+CREATE INDEX "ОтчОРасОсМат__3799" on "ОтчОРасОсМат" ("РасхМатВСтро");
+
+ALTER TABLE "ОтчОРасОсМат"
 	ADD CONSTRAINT "ОтчОРасОсМат__2474" FOREIGN KEY ("Сотрудники") REFERENCES "Сотрудники" ("primaryKey");
 
 CREATE INDEX "ОтчОРасОсМат__2244" on "ОтчОРасОсМат" ("Сотрудники");
+
+ALTER TABLE "РасхМатВСтро"
+	ADD CONSTRAINT "РасхМатВСтро__6386" FOREIGN KEY ("Номенклатура") REFERENCES "Номенклатура" ("primaryKey");
+
+CREATE INDEX "РасхМатВСтро__5781" on "РасхМатВСтро" ("Номенклатура");
+
+ALTER TABLE "РасхМатВСтро"
+	ADD CONSTRAINT "РасхМатВСтро__8901" FOREIGN KEY ("ЕдИзмерен") REFERENCES "ЕдИзмерен" ("primaryKey");
+
+CREATE INDEX "РасхМатВСтро__3331" on "РасхМатВСтро" ("ЕдИзмерен");
+
+ALTER TABLE "РасхМатВСтро"
+	ADD CONSTRAINT "РасхМатВСтро__7174" FOREIGN KEY ("ДокСмета") REFERENCES "ДокСмета" ("primaryKey");
+
+CREATE INDEX "РасхМатВСтро__7356" on "РасхМатВСтро" ("ДокСмета");
+
+ALTER TABLE "ДокСмета"
+	ADD CONSTRAINT "ДокСмета_FЕдИ_4288" FOREIGN KEY ("ЕдИзмерен") REFERENCES "ЕдИзмерен" ("primaryKey");
+
+CREATE INDEX "ДокСмета_IЕдИ_1267" on "ДокСмета" ("ЕдИзмерен");
 
 ALTER TABLE "ДокСмета"
 	ADD CONSTRAINT "ДокСмета_FОбъ_7023" FOREIGN KEY ("ОбъектСМР") REFERENCES "ОбъектСМР" ("primaryKey");
 
 CREATE INDEX "ДокСмета_IОбъ_5185" on "ДокСмета" ("ОбъектСМР");
+
+ALTER TABLE "ДокСмета"
+	ADD CONSTRAINT "ДокСмета_FСпр_4492" FOREIGN KEY ("СпрКонтраг") REFERENCES "СпрКонтраг" ("primaryKey");
+
+CREATE INDEX "ДокСмета_IСпр_3353" on "ДокСмета" ("СпрКонтраг");
+
+ALTER TABLE "ДокСмета"
+	ADD CONSTRAINT "ДокСмета_FНом_8630" FOREIGN KEY ("Номенклатура") REFERENCES "Номенклатура" ("primaryKey");
+
+CREATE INDEX "ДокСмета_IНом_2095" on "ДокСмета" ("Номенклатура");
 
 ALTER TABLE "ОтПоВыпДогов"
 	ADD CONSTRAINT "ОтПоВыпДогов_F_890" FOREIGN KEY ("Сотрудники") REFERENCES "Сотрудники" ("primaryKey");

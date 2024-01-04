@@ -34,12 +34,22 @@ namespace IIS.Proekt
             "КолПоАктТек as \'Количество по актам текущий\'",
             "СуммаИтого as \'Сумма итого\'",
             "Сотрудники as \'Сотрудник\'",
-            "Сотрудники.ФИО as \'Сотрудник\'"})]
+            "Сотрудники.ФИО as \'Сотрудник\'",
+            "Номенклатура as \'Номенклатура\'",
+            "Номенклатура.Наименов as \'Номенклатура\'",
+            "РасхМатВСтро as \'Количество по актам всего\'",
+            "РасхМатВСтро.Количество as \'Количество по актам всего\'",
+            "ДокСмета as \'Количество по смете\'",
+            "ДокСмета.Количество as \'Количество по смете\'"})]
     [View("ОтчОРасОсМатL", new string[] {
             "НормаРасхода as \'Норма расхода\'",
             "КолПоАктТек as \'Количество по актам текущий\'",
             "СуммаИтого as \'Сумма итого\'",
-            "Сотрудники.ФИО as \'Сотрудники\'"})]
+            "Сотрудники as \'Сотрудники\'",
+            "Сотрудники.ФИО as \'Сотрудники\'",
+            "Номенклатура.Наименов as \'Номенклатура\'",
+            "РасхМатВСтро.Количество as \'Количество по актам всего\'",
+            "ДокСмета.Количество as \'Количество по смете\'"})]
     public class ОтчОРасОсМат : ICSSoft.STORMNET.DataObject
     {
         
@@ -48,6 +58,12 @@ namespace IIS.Proekt
         private int fНормаРасхода;
         
         private float fСуммаИтого;
+        
+        private IIS.Proekt.ДокСмета fДокСмета;
+        
+        private IIS.Proekt.Номенклатура fНоменклатура;
+        
+        private IIS.Proekt.РасхМатВСтро fРасхМатВСтро;
         
         private IIS.Proekt.Сотрудники fСотрудники;
         
@@ -146,6 +162,108 @@ namespace IIS.Proekt
                 // *** Start programmer edit section *** (ОтчОРасОсМат.СуммаИтого Set end)
 
                 // *** End programmer edit section *** (ОтчОРасОсМат.СуммаИтого Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Отч о рас ос мат.
+        /// </summary>
+        // *** Start programmer edit section *** (ОтчОРасОсМат.ДокСмета CustomAttributes)
+
+        // *** End programmer edit section *** (ОтчОРасОсМат.ДокСмета CustomAttributes)
+        [PropertyStorage(new string[] {
+                "ДокСмета"})]
+        [NotNull()]
+        public virtual IIS.Proekt.ДокСмета ДокСмета
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ОтчОРасОсМат.ДокСмета Get start)
+
+                // *** End programmer edit section *** (ОтчОРасОсМат.ДокСмета Get start)
+                IIS.Proekt.ДокСмета result = this.fДокСмета;
+                // *** Start programmer edit section *** (ОтчОРасОсМат.ДокСмета Get end)
+
+                // *** End programmer edit section *** (ОтчОРасОсМат.ДокСмета Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ОтчОРасОсМат.ДокСмета Set start)
+
+                // *** End programmer edit section *** (ОтчОРасОсМат.ДокСмета Set start)
+                this.fДокСмета = value;
+                // *** Start programmer edit section *** (ОтчОРасОсМат.ДокСмета Set end)
+
+                // *** End programmer edit section *** (ОтчОРасОсМат.ДокСмета Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Отч о рас ос мат.
+        /// </summary>
+        // *** Start programmer edit section *** (ОтчОРасОсМат.Номенклатура CustomAttributes)
+
+        // *** End programmer edit section *** (ОтчОРасОсМат.Номенклатура CustomAttributes)
+        [PropertyStorage(new string[] {
+                "Номенклатура"})]
+        [NotNull()]
+        public virtual IIS.Proekt.Номенклатура Номенклатура
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ОтчОРасОсМат.Номенклатура Get start)
+
+                // *** End programmer edit section *** (ОтчОРасОсМат.Номенклатура Get start)
+                IIS.Proekt.Номенклатура result = this.fНоменклатура;
+                // *** Start programmer edit section *** (ОтчОРасОсМат.Номенклатура Get end)
+
+                // *** End programmer edit section *** (ОтчОРасОсМат.Номенклатура Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ОтчОРасОсМат.Номенклатура Set start)
+
+                // *** End programmer edit section *** (ОтчОРасОсМат.Номенклатура Set start)
+                this.fНоменклатура = value;
+                // *** Start programmer edit section *** (ОтчОРасОсМат.Номенклатура Set end)
+
+                // *** End programmer edit section *** (ОтчОРасОсМат.Номенклатура Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Отч о рас ос мат.
+        /// </summary>
+        // *** Start programmer edit section *** (ОтчОРасОсМат.РасхМатВСтро CustomAttributes)
+
+        // *** End programmer edit section *** (ОтчОРасОсМат.РасхМатВСтро CustomAttributes)
+        [PropertyStorage(new string[] {
+                "РасхМатВСтро"})]
+        [NotNull()]
+        public virtual IIS.Proekt.РасхМатВСтро РасхМатВСтро
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ОтчОРасОсМат.РасхМатВСтро Get start)
+
+                // *** End programmer edit section *** (ОтчОРасОсМат.РасхМатВСтро Get start)
+                IIS.Proekt.РасхМатВСтро result = this.fРасхМатВСтро;
+                // *** Start programmer edit section *** (ОтчОРасОсМат.РасхМатВСтро Get end)
+
+                // *** End programmer edit section *** (ОтчОРасОсМат.РасхМатВСтро Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ОтчОРасОсМат.РасхМатВСтро Set start)
+
+                // *** End programmer edit section *** (ОтчОРасОсМат.РасхМатВСтро Set start)
+                this.fРасхМатВСтро = value;
+                // *** Start programmer edit section *** (ОтчОРасОсМат.РасхМатВСтро Set end)
+
+                // *** End programmer edit section *** (ОтчОРасОсМат.РасхМатВСтро Set end)
             }
         }
         

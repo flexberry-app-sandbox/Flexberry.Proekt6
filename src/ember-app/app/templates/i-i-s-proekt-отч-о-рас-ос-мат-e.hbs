@@ -80,4 +80,82 @@
     }}
     {{flexberry-validationmessage error=(v-get validationModel.сотрудники "фИО" "message")}}
   </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-proekt-отч-о-рас-ос-мат-e.номенклатура-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.номенклатура
+      relationName="номенклатура"
+      projection="НоменклатураL"
+      title=(t "forms.i-i-s-proekt-отч-о-рас-ос-мат-e.номенклатура-caption")
+      readonly=readonly
+      componentName="номенклатураLookup"
+      class=(if (v-get validationModel "номенклатура" "isInvalid") "error")
+      data-test-i-i-s-proekt-отч-о-рас-ос-мат-e-номенклатура=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "номенклатура" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.номенклатура.наименов
+      class=(if (v-get validationModel.номенклатура "наименов" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-отч-о-рас-ос-мат-e.номенклатура.наименов-caption")
+      data-test-i-i-s-proekt-отч-о-рас-ос-мат-e-номенклатура-наименов=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.номенклатура "наименов" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-proekt-отч-о-рас-ос-мат-e.расхМатВСтро-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.расхМатВСтро
+      relationName="расхМатВСтро"
+      projection="РасхМатВСтроL"
+      title=(t "forms.i-i-s-proekt-отч-о-рас-ос-мат-e.расхМатВСтро-caption")
+      readonly=readonly
+      componentName="расхМатВСтроLookup"
+      class=(if (v-get validationModel "расхМатВСтро" "isInvalid") "error")
+      data-test-i-i-s-proekt-отч-о-рас-ос-мат-e-расхМатВСтро=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "расхМатВСтро" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.расхМатВСтро.количество
+      class=(if (v-get validationModel.расхМатВСтро "количество" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-отч-о-рас-ос-мат-e.расхМатВСтро.количество-caption")
+      data-test-i-i-s-proekt-отч-о-рас-ос-мат-e-расхМатВСтро-количество=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.расхМатВСтро "количество" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-proekt-отч-о-рас-ос-мат-e.докСмета-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.докСмета
+      relationName="докСмета"
+      projection="ДокСметаL"
+      title=(t "forms.i-i-s-proekt-отч-о-рас-ос-мат-e.докСмета-caption")
+      readonly=readonly
+      componentName="докСметаLookup"
+      class=(if (v-get validationModel "докСмета" "isInvalid") "error")
+      data-test-i-i-s-proekt-отч-о-рас-ос-мат-e-докСмета=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "докСмета" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.докСмета.количество
+      class=(if (v-get validationModel.докСмета "количество" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-отч-о-рас-ос-мат-e.докСмета.количество-caption")
+      data-test-i-i-s-proekt-отч-о-рас-ос-мат-e-докСмета-количество=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.докСмета "количество" "message")}}
+  </div>
 </form>

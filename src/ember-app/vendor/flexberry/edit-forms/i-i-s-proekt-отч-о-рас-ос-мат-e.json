@@ -7,6 +7,30 @@
       "relationName": "Сотрудники",
       "projection": "ДолжностьL",
       "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Номенклатура",
+      "projection": "НоменклатураL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "РасхМатВСтро",
+      "projection": "РасхМатВСтроL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "ДокСмета",
+      "projection": "ДокСметаL",
+      "detailModelName": null
     }
   ],
   "external": false,

@@ -1,5 +1,30 @@
 ﻿{
-  "propertyLookup": [],
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "ДокСмета",
+      "projection": "ДокСметаL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Номенклатура",
+      "projection": "НоменклатураL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "ЕдИзмерен",
+      "projection": "ЕдИзмеренL",
+      "detailModelName": null
+    }
+  ],
   "external": false,
   "caption": "Расход материалов в строительстве",
   "name": "IISProektРасхМатВСтроE",

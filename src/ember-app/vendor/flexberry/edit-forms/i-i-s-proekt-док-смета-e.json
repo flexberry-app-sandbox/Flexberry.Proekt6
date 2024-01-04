@@ -7,6 +7,30 @@
       "relationName": "ОбъектСМР",
       "projection": "ОбъектСМРL",
       "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Номенклатура",
+      "projection": "НоменклатураL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "СправочникКонтрагенты",
+      "projection": "СпрКонтрагL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "ЕдИзмерен",
+      "projection": "ЕдИзмеренL",
+      "detailModelName": null
     }
   ],
   "external": false,

@@ -37,16 +37,6 @@
   <div class="field">
     {{flexberry-field
       readonly=readonly
-      value=model.объем
-      class=(if (v-get validationModel "объем" "isInvalid") "error")
-      label=(t "forms.i-i-s-proekt-расх-мат-в-стро-e.объем-caption")
-      data-test-i-i-s-proekt-расх-мат-в-стро-e-объем=true
-    }}
-    {{flexberry-validationmessage error=(v-get validationModel "объем" "message")}}
-  </div>
-  <div class="field">
-    {{flexberry-field
-      readonly=readonly
       value=model.количество
       class=(if (v-get validationModel "количество" "isInvalid") "error")
       label=(t "forms.i-i-s-proekt-расх-мат-в-стро-e.количество-caption")
@@ -73,5 +63,83 @@
       data-test-i-i-s-proekt-расх-мат-в-стро-e-суммаИтого=true
     }}
     {{flexberry-validationmessage error=(v-get validationModel "суммаИтого" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-proekt-расх-мат-в-стро-e.докСмета-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.докСмета
+      relationName="докСмета"
+      projection="ДокСметаL"
+      title=(t "forms.i-i-s-proekt-расх-мат-в-стро-e.докСмета-caption")
+      readonly=readonly
+      componentName="докСметаLookup"
+      class=(if (v-get validationModel "докСмета" "isInvalid") "error")
+      data-test-i-i-s-proekt-расх-мат-в-стро-e-докСмета=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "докСмета" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.докСмета.обРабПоСмет
+      class=(if (v-get validationModel.докСмета "обРабПоСмет" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-расх-мат-в-стро-e.докСмета.обРабПоСмет-caption")
+      data-test-i-i-s-proekt-расх-мат-в-стро-e-докСмета-обРабПоСмет=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.докСмета "обРабПоСмет" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-proekt-расх-мат-в-стро-e.номенклатура-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.номенклатура
+      relationName="номенклатура"
+      projection="НоменклатураL"
+      title=(t "forms.i-i-s-proekt-расх-мат-в-стро-e.номенклатура-caption")
+      readonly=readonly
+      componentName="номенклатураLookup"
+      class=(if (v-get validationModel "номенклатура" "isInvalid") "error")
+      data-test-i-i-s-proekt-расх-мат-в-стро-e-номенклатура=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "номенклатура" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.номенклатура.наименов
+      class=(if (v-get validationModel.номенклатура "наименов" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-расх-мат-в-стро-e.номенклатура.наименов-caption")
+      data-test-i-i-s-proekt-расх-мат-в-стро-e-номенклатура-наименов=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.номенклатура "наименов" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-proekt-расх-мат-в-стро-e.едИзмерен-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.едИзмерен
+      relationName="едИзмерен"
+      projection="ЕдИзмеренL"
+      title=(t "forms.i-i-s-proekt-расх-мат-в-стро-e.едИзмерен-caption")
+      readonly=readonly
+      componentName="едИзмеренLookup"
+      class=(if (v-get validationModel "едИзмерен" "isInvalid") "error")
+      data-test-i-i-s-proekt-расх-мат-в-стро-e-едИзмерен=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "едИзмерен" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.едИзмерен.наименование
+      class=(if (v-get validationModel.едИзмерен "наименование" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-расх-мат-в-стро-e.едИзмерен.наименование-caption")
+      data-test-i-i-s-proekt-расх-мат-в-стро-e-едИзмерен-наименование=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.едИзмерен "наименование" "message")}}
   </div>
 </form>

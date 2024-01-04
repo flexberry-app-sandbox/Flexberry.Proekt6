@@ -8,17 +8,22 @@ CREATE TABLE ОтчОРасОсМат (
  КолПоАктТек INT NULL,
  НормаРасхода INT NULL,
  СуммаИтого REAL NULL,
+ ДокСмета UUID NOT NULL,
+ Номенклатура UUID NOT NULL,
+ РасхМатВСтро UUID NOT NULL,
  Сотрудники UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
 CREATE TABLE РасхМатВСтро (
  primaryKey UUID NOT NULL,
- Объем REAL NULL,
  ЦенаЗаЕд REAL NULL,
  СуммаИтого REAL NULL,
  Количество REAL NULL,
  КодСДР INT NULL,
+ Номенклатура UUID NOT NULL,
+ ЕдИзмерен UUID NOT NULL,
+ ДокСмета UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
@@ -29,7 +34,10 @@ CREATE TABLE ДокСмета (
  ЦенаЗаЕд REAL NULL,
  НомСметРасч INT NULL,
  ОбРабПоСмет REAL NULL,
+ ЕдИзмерен UUID NOT NULL,
  ОбъектСМР UUID NOT NULL,
+ СпрКонтраг UUID NOT NULL,
+ Номенклатура UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
@@ -215,11 +223,38 @@ CREATE TABLE ApplicationLog (
 
 
 
+ ALTER TABLE ОтчОРасОсМат ADD CONSTRAINT FKb57bf0e10414822d32409f96852a9d03b9fb7319 FOREIGN KEY (ДокСмета) REFERENCES ДокСмета; 
+CREATE INDEX Indexb57bf0e10414822d32409f96852a9d03b9fb7319 on ОтчОРасОсМат (ДокСмета); 
+
+ ALTER TABLE ОтчОРасОсМат ADD CONSTRAINT FKad1ec51d0909ff2a15e69d7588292b309888a06f FOREIGN KEY (Номенклатура) REFERENCES Номенклатура; 
+CREATE INDEX Indexad1ec51d0909ff2a15e69d7588292b309888a06f on ОтчОРасОсМат (Номенклатура); 
+
+ ALTER TABLE ОтчОРасОсМат ADD CONSTRAINT FK48867c37cd4ad9dd35c64503308a5f4a4641ff15 FOREIGN KEY (РасхМатВСтро) REFERENCES РасхМатВСтро; 
+CREATE INDEX Index48867c37cd4ad9dd35c64503308a5f4a4641ff15 on ОтчОРасОсМат (РасхМатВСтро); 
+
  ALTER TABLE ОтчОРасОсМат ADD CONSTRAINT FKa38efd010a44d3840bcaec07030440b464955959 FOREIGN KEY (Сотрудники) REFERENCES Сотрудники; 
 CREATE INDEX Indexa38efd010a44d3840bcaec07030440b464955959 on ОтчОРасОсМат (Сотрудники); 
 
+ ALTER TABLE РасхМатВСтро ADD CONSTRAINT FKd6061a5ff83cbd4730cef6aacb987394cfd2c8d6 FOREIGN KEY (Номенклатура) REFERENCES Номенклатура; 
+CREATE INDEX Indexd6061a5ff83cbd4730cef6aacb987394cfd2c8d6 on РасхМатВСтро (Номенклатура); 
+
+ ALTER TABLE РасхМатВСтро ADD CONSTRAINT FK2419758701318a63eba999f09a97ce1684627ea8 FOREIGN KEY (ЕдИзмерен) REFERENCES ЕдИзмерен; 
+CREATE INDEX Index2419758701318a63eba999f09a97ce1684627ea8 on РасхМатВСтро (ЕдИзмерен); 
+
+ ALTER TABLE РасхМатВСтро ADD CONSTRAINT FKc65f6f75e20260f8a7db5aca5f1684a21a878e1a FOREIGN KEY (ДокСмета) REFERENCES ДокСмета; 
+CREATE INDEX Indexc65f6f75e20260f8a7db5aca5f1684a21a878e1a on РасхМатВСтро (ДокСмета); 
+
+ ALTER TABLE ДокСмета ADD CONSTRAINT FK8a6d39f4994393db4b33bec9bc715a465bd840b1 FOREIGN KEY (ЕдИзмерен) REFERENCES ЕдИзмерен; 
+CREATE INDEX Index8a6d39f4994393db4b33bec9bc715a465bd840b1 on ДокСмета (ЕдИзмерен); 
+
  ALTER TABLE ДокСмета ADD CONSTRAINT FKd8ed78c0e847f2c5452a78e27d8cb528e829685d FOREIGN KEY (ОбъектСМР) REFERENCES ОбъектСМР; 
 CREATE INDEX Indexd8ed78c0e847f2c5452a78e27d8cb528e829685d on ДокСмета (ОбъектСМР); 
+
+ ALTER TABLE ДокСмета ADD CONSTRAINT FKfdcd57f6886b31c67ef3d79f10d0e20496a920a3 FOREIGN KEY (СпрКонтраг) REFERENCES СпрКонтраг; 
+CREATE INDEX Indexfdcd57f6886b31c67ef3d79f10d0e20496a920a3 on ДокСмета (СпрКонтраг); 
+
+ ALTER TABLE ДокСмета ADD CONSTRAINT FKfec11f74bb5ea8d2951bd21585b2a5ac07b6e78f FOREIGN KEY (Номенклатура) REFERENCES Номенклатура; 
+CREATE INDEX Indexfec11f74bb5ea8d2951bd21585b2a5ac07b6e78f on ДокСмета (Номенклатура); 
 
  ALTER TABLE ОтПоВыпДогов ADD CONSTRAINT FKbf0fca5eefcdd6772e1ea0480cbc90e2785e03a2 FOREIGN KEY (Сотрудники) REFERENCES Сотрудники; 
 CREATE INDEX Indexbf0fca5eefcdd6772e1ea0480cbc90e2785e03a2 on ОтПоВыпДогов (Сотрудники); 

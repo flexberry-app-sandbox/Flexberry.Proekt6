@@ -10,7 +10,10 @@ export let Model = Mixin.create({
   обРабПоСмет: DS.attr('decimal'),
   общСметСтои: DS.attr('decimal'),
   ценаЗаЕд: DS.attr('decimal'),
+  едИзмерен: DS.belongsTo('i-i-s-proekt-ед-измерен', { inverse: null, async: false }),
+  номенклатура: DS.belongsTo('i-i-s-proekt-номенклатура', { inverse: null, async: false }),
   объектСМР: DS.belongsTo('i-i-s-proekt-объект-с-м-р', { inverse: null, async: false }),
+  спрКонтраг: DS.belongsTo('справочник-контрагенты', { inverse: null, async: false }),
   тЧСмета: DS.hasMany('i-i-s-proekt-т-ч-смета', { inverse: 'докСмета', async: false })
 });
 
@@ -50,8 +53,29 @@ export let ValidationRules = {
       validator('number', { allowString: true, allowBlank: true }),
     ],
   },
+  едИзмерен: {
+    descriptionKey: 'models.i-i-s-proekt-док-смета.validations.едИзмерен.__caption__',
+    validators: [
+      validator('ds-error'),
+      validator('presence', true),
+    ],
+  },
+  номенклатура: {
+    descriptionKey: 'models.i-i-s-proekt-док-смета.validations.номенклатура.__caption__',
+    validators: [
+      validator('ds-error'),
+      validator('presence', true),
+    ],
+  },
   объектСМР: {
     descriptionKey: 'models.i-i-s-proekt-док-смета.validations.объектСМР.__caption__',
+    validators: [
+      validator('ds-error'),
+      validator('presence', true),
+    ],
+  },
+  спрКонтраг: {
+    descriptionKey: 'models.i-i-s-proekt-док-смета.validations.спрКонтраг.__caption__',
     validators: [
       validator('ds-error'),
       validator('presence', true),
@@ -75,6 +99,15 @@ export let defineProjections = function (modelClass) {
     объектСМР: belongsTo('i-i-s-proekt-объект-с-м-р', 'Объект строительства', {
       объектСтроит: attr('Объект строительства', { index: 5 })
     }, { index: 4 }),
+    номенклатура: belongsTo('i-i-s-proekt-номенклатура', 'Номенклатура', {
+      наименов: attr('Номенклатура', { index: 7 })
+    }, { index: 6 }),
+    спрКонтраг: belongsTo('справочник-контрагенты', 'Контрагент', {
+      наименование: attr('Контрагент', { index: 9 })
+    }, { index: 8 }),
+    едИзмерен: belongsTo('i-i-s-proekt-ед-измерен', 'Единицы измерения', {
+      наименование: attr('Единицы измерения', { index: 11 })
+    }, { index: 10 }),
     тЧСмета: hasMany('i-i-s-proekt-т-ч-смета', 'Табличная часть сметы', {
       стоимСтроРаб: attr('Стоимость строительных работ', { index: 0 }),
       стоимМонРаб: attr('Стоимость монтажных работ', { index: 1 }),
@@ -89,6 +122,15 @@ export let defineProjections = function (modelClass) {
     общСметСтои: attr('Общая сметная стоимость', { index: 3 }),
     объектСМР: belongsTo('i-i-s-proekt-объект-с-м-р', 'Объект строительства', {
       объектСтроит: attr('Объект строительства', { index: 4 })
+    }, { index: -1, hidden: true }),
+    номенклатура: belongsTo('i-i-s-proekt-номенклатура', 'Номенклатура', {
+      наименов: attr('Номенклатура', { index: 5 })
+    }, { index: -1, hidden: true }),
+    спрКонтраг: belongsTo('справочник-контрагенты', 'Контрагент', {
+      наименование: attr('Контрагент', { index: 6 })
+    }, { index: -1, hidden: true }),
+    едИзмерен: belongsTo('i-i-s-proekt-ед-измерен', 'Единицы измерения', {
+      наименование: attr('Единицы измерения', { index: 7 })
     }, { index: -1, hidden: true })
   });
 };

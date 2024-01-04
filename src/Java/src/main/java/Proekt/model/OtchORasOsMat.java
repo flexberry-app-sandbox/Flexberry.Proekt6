@@ -32,6 +32,36 @@ public class OtchORasOsMat {
     private Float суммаитого;
 
     @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "DokSmeta")
+    @Convert("DokSmeta")
+    @Column(name = "ДокСмета", length = 16, unique = true, nullable = false)
+    private UUID _doksmetaid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "DokSmeta", insertable = false, updatable = false)
+    private DokSmeta doksmeta;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "Nomenklatura")
+    @Convert("Nomenklatura")
+    @Column(name = "Номенклатура", length = 16, unique = true, nullable = false)
+    private UUID _nomenklaturaid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "Nomenklatura", insertable = false, updatable = false)
+    private Nomenklatura nomenklatura;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "RasxMatVStro")
+    @Convert("RasxMatVStro")
+    @Column(name = "РасхМатВСтро", length = 16, unique = true, nullable = false)
+    private UUID _rasxmatvstroid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "RasxMatVStro", insertable = false, updatable = false)
+    private RasxMatVStro rasxmatvstro;
+
+    @EdmIgnore
     @Converter(converterClass = UUIDConverter.class, name = "Sotrudniki")
     @Convert("Sotrudniki")
     @Column(name = "Сотрудники", length = 16, unique = true, nullable = false)

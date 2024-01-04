@@ -56,8 +56,29 @@
     {
       "polymorphic": false,
       "presence": true,
+      "name": "едИзмерен",
+      "relatedTo": "i-i-s-proekt-ед-измерен",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "номенклатура",
+      "relatedTo": "i-i-s-proekt-номенклатура",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
       "name": "объектСМР",
       "relatedTo": "i-i-s-proekt-объект-с-м-р",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "спрКонтраг",
+      "relatedTo": "справочник-контрагенты",
       "inverse": null
     }
   ],
@@ -118,6 +139,69 @@
           "caption": "Объект строительства",
           "name": "объектСМР",
           "relatedTo": "i-i-s-proekt-объект-с-м-р",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Номенклатура",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименов",
+              "caption": "Номенклатура",
+              "hidden": false,
+              "index": 7
+            }
+          ],
+          "index": 6,
+          "type": "default",
+          "caption": "Номенклатура",
+          "name": "номенклатура",
+          "relatedTo": "i-i-s-proekt-номенклатура",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "СправочникКонтрагенты",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Контрагент",
+              "hidden": false,
+              "index": 9
+            }
+          ],
+          "index": 8,
+          "type": "default",
+          "caption": "Контрагент",
+          "name": "спрКонтраг",
+          "relatedTo": "справочник-контрагенты",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ЕдИзмерен",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Единицы измерения",
+              "hidden": false,
+              "index": 11
+            }
+          ],
+          "index": 10,
+          "type": "default",
+          "caption": "Единицы измерения",
+          "name": "едИзмерен",
+          "relatedTo": "i-i-s-proekt-ед-измерен",
           "inverse": null
         }
       ],
@@ -180,6 +264,69 @@
           "caption": "Объект строительства",
           "name": "объектСМР",
           "relatedTo": "i-i-s-proekt-объект-с-м-р",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Номенклатура",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименов",
+              "caption": "Номенклатура",
+              "hidden": false,
+              "index": 5
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Номенклатура",
+          "name": "номенклатура",
+          "relatedTo": "i-i-s-proekt-номенклатура",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "СправочникКонтрагенты",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Контрагент",
+              "hidden": false,
+              "index": 6
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Контрагент",
+          "name": "спрКонтраг",
+          "relatedTo": "справочник-контрагенты",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ЕдИзмерен",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Единицы измерения",
+              "hidden": false,
+              "index": 7
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Единицы измерения",
+          "name": "едИзмерен",
+          "relatedTo": "i-i-s-proekt-ед-измерен",
           "inverse": null
         }
       ],

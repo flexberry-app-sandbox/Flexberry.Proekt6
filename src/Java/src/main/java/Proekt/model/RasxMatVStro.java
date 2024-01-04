@@ -7,6 +7,7 @@ import Proekt.utils.UUIDConverter;
 import javax.persistence.*;
 import java.util.UUID;
 
+import com.sap.olingo.jpa.metadata.core.edm.annotation.EdmIgnore;
 
 /**
  * Entity implementation class for Entity: РасхМатВСтро
@@ -21,9 +22,6 @@ public class RasxMatVStro {
     @Column(name = "primarykey", length = 16, unique = true, nullable = false)
     private UUID primarykey;
 
-    @Column(name = "Объем")
-    private Float объем;
-
     @Column(name = "ЦенаЗаЕд")
     private Float ценазаед;
 
@@ -36,6 +34,36 @@ public class RasxMatVStro {
     @Column(name = "КодСДР")
     private Integer кодсдр;
 
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "Nomenklatura")
+    @Convert("Nomenklatura")
+    @Column(name = "Номенклатура", length = 16, unique = true, nullable = false)
+    private UUID _nomenklaturaid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "Nomenklatura", insertable = false, updatable = false)
+    private Nomenklatura nomenklatura;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "EdIzmeren")
+    @Convert("EdIzmeren")
+    @Column(name = "ЕдИзмерен", length = 16, unique = true, nullable = false)
+    private UUID _edizmerenid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "EdIzmeren", insertable = false, updatable = false)
+    private EdIzmeren edizmeren;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "DokSmeta")
+    @Convert("DokSmeta")
+    @Column(name = "ДокСмета", length = 16, unique = true, nullable = false)
+    private UUID _doksmetaid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "DokSmeta", insertable = false, updatable = false)
+    private DokSmeta doksmeta;
+
 
     public RasxMatVStro() {
         super();
@@ -47,14 +75,6 @@ public class RasxMatVStro {
 
     public UUID getPrimarykey() {
         return primarykey;
-    }
-
-    public Float getОбъем() {
-      return объем;
-    }
-
-    public void setОбъем(Float объем) {
-      this.объем = объем;
     }
 
     public Float getЦенаЗаЕд() {

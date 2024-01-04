@@ -12,6 +12,12 @@ CREATE TABLE [ОтчОРасОсМат] (
 
 	 [СуммаИтого] REAL  NULL,
 
+	 [ДокСмета] UNIQUEIDENTIFIER  NOT NULL,
+
+	 [Номенклатура] UNIQUEIDENTIFIER  NOT NULL,
+
+	 [РасхМатВСтро] UNIQUEIDENTIFIER  NOT NULL,
+
 	 [Сотрудники] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
@@ -25,11 +31,15 @@ CREATE TABLE [РасхМатВСтро] (
 
 	 [Количество] REAL  NULL,
 
-	 [Объем] REAL  NULL,
-
 	 [СуммаИтого] REAL  NULL,
 
 	 [ЦенаЗаЕд] REAL  NULL,
+
+	 [ДокСмета] UNIQUEIDENTIFIER  NOT NULL,
+
+	 [ЕдИзмерен] UNIQUEIDENTIFIER  NOT NULL,
+
+	 [Номенклатура] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
 
@@ -48,7 +58,13 @@ CREATE TABLE [ДокСмета] (
 
 	 [ЦенаЗаЕд] REAL  NULL,
 
+	 [ЕдИзмерен] UNIQUEIDENTIFIER  NOT NULL,
+
+	 [Номенклатура] UNIQUEIDENTIFIER  NOT NULL,
+
 	 [ОбъектСМР] UNIQUEIDENTIFIER  NOT NULL,
+
+	 [СпрКонтраг] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
 
