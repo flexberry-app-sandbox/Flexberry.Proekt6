@@ -30,14 +30,28 @@ namespace IIS.Proekt
     [Caption("Отчет по выполнению договоров")]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("ОтПоВыпДоговE", new string[] {
-            "Выполнение as \'Выполнение\'",
-            "СумКонечОстат as \'Сумма конечный остаток\'",
+            "НомерДогово as \'Номер договора\'",
+            "ОбъектСМР as \'Объект строительства\'",
+            "ОбъектСМР.ОбъектСтроит as \'Объект строительства\'",
             "Сотрудники as \'Сотрудник\'",
-            "Сотрудники.ФИО as \'Сотрудник\'"})]
-    [View("ОтПоВыпДоговL", new string[] {
+            "Сотрудники.ФИО as \'Сотрудник\'",
+            "СпрКонтраг as \'Контрагент\'",
+            "СпрКонтраг.Наименование as \'Контрагент\'",
+            "ДокСмета as \'Объем работ по смете\'",
+            "ДокСмета.ОбРабПоСмет as \'Объем работ по смете\'",
+            "ДокУсловДог as \'Сумма по договору\'",
+            "ДокУсловДог.СумПоДогов as \'Сумма по договору\'",
             "Выполнение as \'Выполнение\'",
-            "СумКонечОстат as \'Сумма конечный остаток\'",
-            "Сотрудники.ФИО as \'Сотрудник\'"})]
+            "СумКонечОстат as \'Сумма конечный остаток\'"})]
+    [View("ОтПоВыпДоговL", new string[] {
+            "Сотрудники.ФИО as \'Сотрудник\'",
+            "НомерДогово as \'Номер договора\'",
+            "ОбъектСМР.ОбъектСтроит as \'Объект строительства\'",
+            "СпрКонтраг.Наименование as \'Котрагент\'",
+            "ДокСмета.ОбРабПоСмет as \'Объем работ по смете\'",
+            "ДокУсловДог.СумПоДогов as \'Сумма по договору\'",
+            "Выполнение as \'Выполнение\'",
+            "СумКонечОстат as \'Сумма конечный остаток\'"})]
     public class ОтПоВыпДогов : ICSSoft.STORMNET.DataObject
     {
         
@@ -45,7 +59,17 @@ namespace IIS.Proekt
         
         private float fВыполнение;
         
+        private int fНомерДогово;
+        
+        private IIS.Proekt.ДокУсловДог fДокУсловДог;
+        
+        private IIS.Proekt.СпрКонтраг fСпрКонтраг;
+        
         private IIS.Proekt.Сотрудники fСотрудники;
+        
+        private IIS.Proekt.ДокСмета fДокСмета;
+        
+        private IIS.Proekt.ОбъектСМР fОбъектСМР;
         
         // *** Start programmer edit section *** (ОтПоВыпДогов CustomMembers)
 
@@ -84,6 +108,37 @@ namespace IIS.Proekt
         }
         
         /// <summary>
+        /// НомерДогово.
+        /// </summary>
+        // *** Start programmer edit section *** (ОтПоВыпДогов.НомерДогово CustomAttributes)
+
+        // *** End programmer edit section *** (ОтПоВыпДогов.НомерДогово CustomAttributes)
+        public virtual int НомерДогово
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ОтПоВыпДогов.НомерДогово Get start)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.НомерДогово Get start)
+                int result = this.fНомерДогово;
+                // *** Start programmer edit section *** (ОтПоВыпДогов.НомерДогово Get end)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.НомерДогово Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ОтПоВыпДогов.НомерДогово Set start)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.НомерДогово Set start)
+                this.fНомерДогово = value;
+                // *** Start programmer edit section *** (ОтПоВыпДогов.НомерДогово Set end)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.НомерДогово Set end)
+            }
+        }
+        
+        /// <summary>
         /// СумКонечОстат.
         /// </summary>
         // *** Start programmer edit section *** (ОтПоВыпДогов.СумКонечОстат CustomAttributes)
@@ -111,6 +166,108 @@ namespace IIS.Proekt
                 // *** Start programmer edit section *** (ОтПоВыпДогов.СумКонечОстат Set end)
 
                 // *** End programmer edit section *** (ОтПоВыпДогов.СумКонечОстат Set end)
+            }
+        }
+        
+        /// <summary>
+        /// От по вып догов.
+        /// </summary>
+        // *** Start programmer edit section *** (ОтПоВыпДогов.ДокСмета CustomAttributes)
+
+        // *** End programmer edit section *** (ОтПоВыпДогов.ДокСмета CustomAttributes)
+        [PropertyStorage(new string[] {
+                "ДокСмета"})]
+        [NotNull()]
+        public virtual IIS.Proekt.ДокСмета ДокСмета
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ОтПоВыпДогов.ДокСмета Get start)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.ДокСмета Get start)
+                IIS.Proekt.ДокСмета result = this.fДокСмета;
+                // *** Start programmer edit section *** (ОтПоВыпДогов.ДокСмета Get end)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.ДокСмета Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ОтПоВыпДогов.ДокСмета Set start)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.ДокСмета Set start)
+                this.fДокСмета = value;
+                // *** Start programmer edit section *** (ОтПоВыпДогов.ДокСмета Set end)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.ДокСмета Set end)
+            }
+        }
+        
+        /// <summary>
+        /// От по вып догов.
+        /// </summary>
+        // *** Start programmer edit section *** (ОтПоВыпДогов.ДокУсловДог CustomAttributes)
+
+        // *** End programmer edit section *** (ОтПоВыпДогов.ДокУсловДог CustomAttributes)
+        [PropertyStorage(new string[] {
+                "ДокУсловДог"})]
+        [NotNull()]
+        public virtual IIS.Proekt.ДокУсловДог ДокУсловДог
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ОтПоВыпДогов.ДокУсловДог Get start)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.ДокУсловДог Get start)
+                IIS.Proekt.ДокУсловДог result = this.fДокУсловДог;
+                // *** Start programmer edit section *** (ОтПоВыпДогов.ДокУсловДог Get end)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.ДокУсловДог Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ОтПоВыпДогов.ДокУсловДог Set start)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.ДокУсловДог Set start)
+                this.fДокУсловДог = value;
+                // *** Start programmer edit section *** (ОтПоВыпДогов.ДокУсловДог Set end)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.ДокУсловДог Set end)
+            }
+        }
+        
+        /// <summary>
+        /// От по вып догов.
+        /// </summary>
+        // *** Start programmer edit section *** (ОтПоВыпДогов.ОбъектСМР CustomAttributes)
+
+        // *** End programmer edit section *** (ОтПоВыпДогов.ОбъектСМР CustomAttributes)
+        [PropertyStorage(new string[] {
+                "ОбъектСМР"})]
+        [NotNull()]
+        public virtual IIS.Proekt.ОбъектСМР ОбъектСМР
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ОтПоВыпДогов.ОбъектСМР Get start)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.ОбъектСМР Get start)
+                IIS.Proekt.ОбъектСМР result = this.fОбъектСМР;
+                // *** Start programmer edit section *** (ОтПоВыпДогов.ОбъектСМР Get end)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.ОбъектСМР Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ОтПоВыпДогов.ОбъектСМР Set start)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.ОбъектСМР Set start)
+                this.fОбъектСМР = value;
+                // *** Start programmer edit section *** (ОтПоВыпДогов.ОбъектСМР Set end)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.ОбъектСМР Set end)
             }
         }
         
@@ -145,6 +302,40 @@ namespace IIS.Proekt
                 // *** Start programmer edit section *** (ОтПоВыпДогов.Сотрудники Set end)
 
                 // *** End programmer edit section *** (ОтПоВыпДогов.Сотрудники Set end)
+            }
+        }
+        
+        /// <summary>
+        /// От по вып догов.
+        /// </summary>
+        // *** Start programmer edit section *** (ОтПоВыпДогов.СпрКонтраг CustomAttributes)
+
+        // *** End programmer edit section *** (ОтПоВыпДогов.СпрКонтраг CustomAttributes)
+        [PropertyStorage(new string[] {
+                "СпрКонтраг"})]
+        [NotNull()]
+        public virtual IIS.Proekt.СпрКонтраг СпрКонтраг
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ОтПоВыпДогов.СпрКонтраг Get start)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.СпрКонтраг Get start)
+                IIS.Proekt.СпрКонтраг result = this.fСпрКонтраг;
+                // *** Start programmer edit section *** (ОтПоВыпДогов.СпрКонтраг Get end)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.СпрКонтраг Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ОтПоВыпДогов.СпрКонтраг Set start)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.СпрКонтраг Set start)
+                this.fСпрКонтраг = value;
+                // *** Start programmer edit section *** (ОтПоВыпДогов.СпрКонтраг Set end)
+
+                // *** End programmer edit section *** (ОтПоВыпДогов.СпрКонтраг Set end)
             }
         }
         

@@ -27,22 +27,38 @@
   <div class="field">
     {{flexberry-field
       readonly=readonly
-      value=model.выполнение
-      class=(if (v-get validationModel "выполнение" "isInvalid") "error")
-      label=(t "forms.i-i-s-proekt-от-по-вып-догов-e.выполнение-caption")
-      data-test-i-i-s-proekt-от-по-вып-догов-e-выполнение=true
+      value=model.номерДогово
+      class=(if (v-get validationModel "номерДогово" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-от-по-вып-догов-e.номерДогово-caption")
+      data-test-i-i-s-proekt-от-по-вып-догов-e-номерДогово=true
     }}
-    {{flexberry-validationmessage error=(v-get validationModel "выполнение" "message")}}
+    {{flexberry-validationmessage error=(v-get validationModel "номерДогово" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-proekt-от-по-вып-догов-e.объектСМР-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.объектСМР
+      relationName="объектСМР"
+      projection="ОбъектСМРL"
+      title=(t "forms.i-i-s-proekt-от-по-вып-догов-e.объектСМР-caption")
+      readonly=readonly
+      componentName="объектСМРLookup"
+      class=(if (v-get validationModel "объектСМР" "isInvalid") "error")
+      data-test-i-i-s-proekt-от-по-вып-догов-e-объектСМР=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "объектСМР" "message")}}
   </div>
   <div class="field">
     {{flexberry-field
-      readonly=readonly
-      value=model.сумКонечОстат
-      class=(if (v-get validationModel "сумКонечОстат" "isInvalid") "error")
-      label=(t "forms.i-i-s-proekt-от-по-вып-догов-e.сумКонечОстат-caption")
-      data-test-i-i-s-proekt-от-по-вып-догов-e-сумКонечОстат=true
+      readonly=true
+      value=model.объектСМР.объектСтроит
+      class=(if (v-get validationModel.объектСМР "объектСтроит" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-от-по-вып-догов-e.объектСМР.объектСтроит-caption")
+      data-test-i-i-s-proekt-от-по-вып-догов-e-объектСМР-объектСтроит=true
     }}
-    {{flexberry-validationmessage error=(v-get validationModel "сумКонечОстат" "message")}}
+    {{flexberry-validationmessage error=(v-get validationModel.объектСМР "объектСтроит" "message")}}
   </div>
   <div class="field">
     <label>{{t "forms.i-i-s-proekt-от-по-вып-догов-e.сотрудники-caption"}}</label>
@@ -69,5 +85,103 @@
       data-test-i-i-s-proekt-от-по-вып-догов-e-сотрудники-фИО=true
     }}
     {{flexberry-validationmessage error=(v-get validationModel.сотрудники "фИО" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-proekt-от-по-вып-догов-e.спрКонтраг-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.спрКонтраг
+      relationName="спрКонтраг"
+      projection="СпрКонтрагL"
+      title=(t "forms.i-i-s-proekt-от-по-вып-догов-e.спрКонтраг-caption")
+      readonly=readonly
+      componentName="спрКонтрагLookup"
+      class=(if (v-get validationModel "спрКонтраг" "isInvalid") "error")
+      data-test-i-i-s-proekt-от-по-вып-догов-e-спрКонтраг=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "спрКонтраг" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.спрКонтраг.наименование
+      class=(if (v-get validationModel.спрКонтраг "наименование" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-от-по-вып-догов-e.спрКонтраг.наименование-caption")
+      data-test-i-i-s-proekt-от-по-вып-догов-e-спрКонтраг-наименование=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.спрКонтраг "наименование" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-proekt-от-по-вып-догов-e.докСмета-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.докСмета
+      relationName="докСмета"
+      projection="ДокСметаL"
+      title=(t "forms.i-i-s-proekt-от-по-вып-догов-e.докСмета-caption")
+      readonly=readonly
+      componentName="докСметаLookup"
+      class=(if (v-get validationModel "докСмета" "isInvalid") "error")
+      data-test-i-i-s-proekt-от-по-вып-догов-e-докСмета=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "докСмета" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.докСмета.обРабПоСмет
+      class=(if (v-get validationModel.докСмета "обРабПоСмет" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-от-по-вып-догов-e.докСмета.обРабПоСмет-caption")
+      data-test-i-i-s-proekt-от-по-вып-догов-e-докСмета-обРабПоСмет=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.докСмета "обРабПоСмет" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-proekt-от-по-вып-догов-e.докУсловДог-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.докУсловДог
+      relationName="докУсловДог"
+      projection="ДокУсловДогL"
+      title=(t "forms.i-i-s-proekt-от-по-вып-догов-e.докУсловДог-caption")
+      readonly=readonly
+      componentName="докУсловДогLookup"
+      class=(if (v-get validationModel "докУсловДог" "isInvalid") "error")
+      data-test-i-i-s-proekt-от-по-вып-догов-e-докУсловДог=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "докУсловДог" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.докУсловДог.сумПоДогов
+      class=(if (v-get validationModel.докУсловДог "сумПоДогов" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-от-по-вып-догов-e.докУсловДог.сумПоДогов-caption")
+      data-test-i-i-s-proekt-от-по-вып-догов-e-докУсловДог-сумПоДогов=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.докУсловДог "сумПоДогов" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.выполнение
+      class=(if (v-get validationModel "выполнение" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-от-по-вып-догов-e.выполнение-caption")
+      data-test-i-i-s-proekt-от-по-вып-догов-e-выполнение=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "выполнение" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.сумКонечОстат
+      class=(if (v-get validationModel "сумКонечОстат" "isInvalid") "error")
+      label=(t "forms.i-i-s-proekt-от-по-вып-догов-e.сумКонечОстат-caption")
+      data-test-i-i-s-proekt-от-по-вып-догов-e-сумКонечОстат=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "сумКонечОстат" "message")}}
   </div>
 </form>

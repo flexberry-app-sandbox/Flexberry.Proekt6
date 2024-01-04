@@ -16,6 +16,15 @@
       "ordered": false
     },
     {
+      "name": "номерДогово",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
       "name": "сумКонечОстат",
       "type": "decimal",
       "flexberryType": "float",
@@ -29,8 +38,36 @@
     {
       "polymorphic": false,
       "presence": true,
+      "name": "докСмета",
+      "relatedTo": "i-i-s-proekt-док-смета",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "докУсловДог",
+      "relatedTo": "i-i-s-proekt-док-услов-дог",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "объектСМР",
+      "relatedTo": "i-i-s-proekt-объект-с-м-р",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
       "name": "сотрудники",
       "relatedTo": "i-i-s-proekt-сотрудники",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "спрКонтраг",
+      "relatedTo": "справочник-контрагенты",
       "inverse": null
     }
   ],
@@ -41,19 +78,46 @@
       "modelName": "i-i-s-proekt-от-по-вып-догов",
       "attrs": [
         {
+          "name": "номерДогово",
+          "caption": "Номер договора",
+          "hidden": false,
+          "index": 0
+        },
+        {
           "name": "выполнение",
           "caption": "Выполнение",
           "hidden": false,
-          "index": 0
+          "index": 11
         },
         {
           "name": "сумКонечОстат",
           "caption": "Сумма конечный остаток",
           "hidden": false,
-          "index": 1
+          "index": 12
         }
       ],
       "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ОбъектСМР",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "объектСтроит",
+              "caption": "Объект строительства",
+              "hidden": false,
+              "index": 2
+            }
+          ],
+          "index": 1,
+          "type": "default",
+          "caption": "Объект строительства",
+          "name": "объектСМР",
+          "relatedTo": "i-i-s-proekt-объект-с-м-р",
+          "inverse": null
+        },
         {
           "lookupValue": null,
           "lookupValueField": null,
@@ -65,14 +129,77 @@
               "name": "фИО",
               "caption": "Сотрудник",
               "hidden": false,
-              "index": 3
+              "index": 4
             }
           ],
-          "index": 2,
+          "index": 3,
           "type": "default",
           "caption": "Сотрудник",
           "name": "сотрудники",
           "relatedTo": "i-i-s-proekt-сотрудники",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "СправочникКонтрагенты",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Контрагент",
+              "hidden": false,
+              "index": 6
+            }
+          ],
+          "index": 5,
+          "type": "default",
+          "caption": "Контрагент",
+          "name": "спрКонтраг",
+          "relatedTo": "справочник-контрагенты",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ДокСмета",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "обРабПоСмет",
+              "caption": "Объем работ по смете",
+              "hidden": false,
+              "index": 8
+            }
+          ],
+          "index": 7,
+          "type": "default",
+          "caption": "Объем работ по смете",
+          "name": "докСмета",
+          "relatedTo": "i-i-s-proekt-док-смета",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ДокУсловДог",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "сумПоДогов",
+              "caption": "Сумма по договору",
+              "hidden": false,
+              "index": 10
+            }
+          ],
+          "index": 9,
+          "type": "default",
+          "caption": "Сумма по договору",
+          "name": "докУсловДог",
+          "relatedTo": "i-i-s-proekt-док-услов-дог",
           "inverse": null
         }
       ],
@@ -83,16 +210,22 @@
       "modelName": "i-i-s-proekt-от-по-вып-догов",
       "attrs": [
         {
+          "name": "номерДогово",
+          "caption": "Номер договора",
+          "hidden": false,
+          "index": 1
+        },
+        {
           "name": "выполнение",
           "caption": "Выполнение",
           "hidden": false,
-          "index": 0
+          "index": 6
         },
         {
           "name": "сумКонечОстат",
           "caption": "Сумма конечный остаток",
           "hidden": false,
-          "index": 1
+          "index": 7
         }
       ],
       "belongsTo": [
@@ -107,7 +240,7 @@
               "name": "фИО",
               "caption": "Сотрудник",
               "hidden": false,
-              "index": 2
+              "index": 0
             }
           ],
           "index": -1,
@@ -115,6 +248,90 @@
           "caption": "Сотрудник",
           "name": "сотрудники",
           "relatedTo": "i-i-s-proekt-сотрудники",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ОбъектСМР",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "объектСтроит",
+              "caption": "Объект строительства",
+              "hidden": false,
+              "index": 2
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Объект строительства",
+          "name": "объектСМР",
+          "relatedTo": "i-i-s-proekt-объект-с-м-р",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "СправочникКонтрагенты",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Котрагент",
+              "hidden": false,
+              "index": 3
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Котрагент",
+          "name": "спрКонтраг",
+          "relatedTo": "справочник-контрагенты",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ДокСмета",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "обРабПоСмет",
+              "caption": "Объем работ по смете",
+              "hidden": false,
+              "index": 4
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Объем работ по смете",
+          "name": "докСмета",
+          "relatedTo": "i-i-s-proekt-док-смета",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ДокУсловДог",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "сумПоДогов",
+              "caption": "Сумма по договору",
+              "hidden": false,
+              "index": 5
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Сумма по договору",
+          "name": "докУсловДог",
+          "relatedTo": "i-i-s-proekt-док-услов-дог",
           "inverse": null
         }
       ],

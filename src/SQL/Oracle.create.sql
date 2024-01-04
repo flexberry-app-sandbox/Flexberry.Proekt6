@@ -112,7 +112,17 @@ CREATE TABLE "ОтПоВыпДогов"
 
 	"Выполнение" FLOAT(53) NULL,
 
+	"НомерДогово" NUMBER(10) NULL,
+
+	"ДокУсловДог" RAW(16) NOT NULL,
+
+	"СпрКонтраг" RAW(16) NOT NULL,
+
 	"Сотрудники" RAW(16) NOT NULL,
+
+	"ДокСмета" RAW(16) NOT NULL,
+
+	"ОбъектСМР" RAW(16) NOT NULL,
 
 	 PRIMARY KEY ("primaryKey")
 ) ;
@@ -476,9 +486,29 @@ ALTER TABLE "ДокСмета"
 CREATE INDEX "ДокСмета_IНом_2095" on "ДокСмета" ("Номенклатура");
 
 ALTER TABLE "ОтПоВыпДогов"
+	ADD CONSTRAINT "ОтПоВыпДогов_F_284" FOREIGN KEY ("ДокУсловДог") REFERENCES "ДокУсловДог" ("primaryKey");
+
+CREATE INDEX "ОтПоВыпДогов__2258" on "ОтПоВыпДогов" ("ДокУсловДог");
+
+ALTER TABLE "ОтПоВыпДогов"
+	ADD CONSTRAINT "ОтПоВыпДогов__5979" FOREIGN KEY ("СпрКонтраг") REFERENCES "СпрКонтраг" ("primaryKey");
+
+CREATE INDEX "ОтПоВыпДогов__7448" on "ОтПоВыпДогов" ("СпрКонтраг");
+
+ALTER TABLE "ОтПоВыпДогов"
 	ADD CONSTRAINT "ОтПоВыпДогов_F_890" FOREIGN KEY ("Сотрудники") REFERENCES "Сотрудники" ("primaryKey");
 
 CREATE INDEX "ОтПоВыпДогов__1314" on "ОтПоВыпДогов" ("Сотрудники");
+
+ALTER TABLE "ОтПоВыпДогов"
+	ADD CONSTRAINT "ОтПоВыпДогов__1448" FOREIGN KEY ("ДокСмета") REFERENCES "ДокСмета" ("primaryKey");
+
+CREATE INDEX "ОтПоВыпДогов__7254" on "ОтПоВыпДогов" ("ДокСмета");
+
+ALTER TABLE "ОтПоВыпДогов"
+	ADD CONSTRAINT "ОтПоВыпДогов__5694" FOREIGN KEY ("ОбъектСМР") REFERENCES "ОбъектСМР" ("primaryKey");
+
+CREATE INDEX "ОтПоВыпДогов__4291" on "ОтПоВыпДогов" ("ОбъектСМР");
 
 ALTER TABLE "ДокУсловДог"
 	ADD CONSTRAINT "ДокУсловДог_F_9952" FOREIGN KEY ("ДокСмета") REFERENCES "ДокСмета" ("primaryKey");

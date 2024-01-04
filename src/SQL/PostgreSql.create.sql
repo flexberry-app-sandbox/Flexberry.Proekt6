@@ -60,7 +60,12 @@ CREATE TABLE ОтПоВыпДогов (
  primaryKey UUID NOT NULL,
  СумКонечОстат REAL NULL,
  Выполнение REAL NULL,
+ НомерДогово INT NULL,
+ ДокУсловДог UUID NOT NULL,
+ СпрКонтраг UUID NOT NULL,
  Сотрудники UUID NOT NULL,
+ ДокСмета UUID NOT NULL,
+ ОбъектСМР UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
@@ -256,8 +261,20 @@ CREATE INDEX Indexfdcd57f6886b31c67ef3d79f10d0e20496a920a3 on ДокСмета (
  ALTER TABLE ДокСмета ADD CONSTRAINT FKfec11f74bb5ea8d2951bd21585b2a5ac07b6e78f FOREIGN KEY (Номенклатура) REFERENCES Номенклатура; 
 CREATE INDEX Indexfec11f74bb5ea8d2951bd21585b2a5ac07b6e78f on ДокСмета (Номенклатура); 
 
+ ALTER TABLE ОтПоВыпДогов ADD CONSTRAINT FK7b0626ce2b902d35792e82ef7998ce6d17263a8b FOREIGN KEY (ДокУсловДог) REFERENCES ДокУсловДог; 
+CREATE INDEX Index7b0626ce2b902d35792e82ef7998ce6d17263a8b on ОтПоВыпДогов (ДокУсловДог); 
+
+ ALTER TABLE ОтПоВыпДогов ADD CONSTRAINT FKe1b805c0a07eeea92cc9ebe90ef6efda26ad35a8 FOREIGN KEY (СпрКонтраг) REFERENCES СпрКонтраг; 
+CREATE INDEX Indexe1b805c0a07eeea92cc9ebe90ef6efda26ad35a8 on ОтПоВыпДогов (СпрКонтраг); 
+
  ALTER TABLE ОтПоВыпДогов ADD CONSTRAINT FKbf0fca5eefcdd6772e1ea0480cbc90e2785e03a2 FOREIGN KEY (Сотрудники) REFERENCES Сотрудники; 
 CREATE INDEX Indexbf0fca5eefcdd6772e1ea0480cbc90e2785e03a2 on ОтПоВыпДогов (Сотрудники); 
+
+ ALTER TABLE ОтПоВыпДогов ADD CONSTRAINT FK164a80cac803c6aa8497b7f8826c9075082ad268 FOREIGN KEY (ДокСмета) REFERENCES ДокСмета; 
+CREATE INDEX Index164a80cac803c6aa8497b7f8826c9075082ad268 on ОтПоВыпДогов (ДокСмета); 
+
+ ALTER TABLE ОтПоВыпДогов ADD CONSTRAINT FK54b0988fd051a63b48f343559b579d30b69a5de9 FOREIGN KEY (ОбъектСМР) REFERENCES ОбъектСМР; 
+CREATE INDEX Index54b0988fd051a63b48f343559b579d30b69a5de9 on ОтПоВыпДогов (ОбъектСМР); 
 
  ALTER TABLE ДокУсловДог ADD CONSTRAINT FKf71c2d39437406f39d509b13f6635352d4816381 FOREIGN KEY (ДокСмета) REFERENCES ДокСмета; 
 CREATE INDEX Indexf71c2d39437406f39d509b13f6635352d4816381 on ДокУсловДог (ДокСмета); 

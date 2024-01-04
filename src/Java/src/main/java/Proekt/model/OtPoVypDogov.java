@@ -28,6 +28,29 @@ public class OtPoVypDogov {
     @Column(name = "Выполнение")
     private Float выполнение;
 
+    @Column(name = "НомерДогово")
+    private Integer номердогово;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "DokUslovDog")
+    @Convert("DokUslovDog")
+    @Column(name = "ДокУсловДог", length = 16, unique = true, nullable = false)
+    private UUID _dokuslovdogid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "DokUslovDog", insertable = false, updatable = false)
+    private DokUslovDog dokuslovdog;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "SprKontrag")
+    @Convert("SprKontrag")
+    @Column(name = "СпрКонтраг", length = 16, unique = true, nullable = false)
+    private UUID _sprkontragid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "SprKontrag", insertable = false, updatable = false)
+    private SprKontrag sprkontrag;
+
     @EdmIgnore
     @Converter(converterClass = UUIDConverter.class, name = "Sotrudniki")
     @Convert("Sotrudniki")
@@ -37,6 +60,26 @@ public class OtPoVypDogov {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "Sotrudniki", insertable = false, updatable = false)
     private Sotrudniki sotrudniki;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "DokSmeta")
+    @Convert("DokSmeta")
+    @Column(name = "ДокСмета", length = 16, unique = true, nullable = false)
+    private UUID _doksmetaid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "DokSmeta", insertable = false, updatable = false)
+    private DokSmeta doksmeta;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "Ob'ektSMR")
+    @Convert("Ob'ektSMR")
+    @Column(name = "ОбъектСМР", length = 16, unique = true, nullable = false)
+    private UUID _ob'ektsmrid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "Ob'ektSMR", insertable = false, updatable = false)
+    private Ob'ektSMR ob'ektsmr;
 
 
     public OtPoVypDogov() {
@@ -65,6 +108,14 @@ public class OtPoVypDogov {
 
     public void setВыполнение(Float выполнение) {
       this.выполнение = выполнение;
+    }
+
+    public Integer getНомерДогово() {
+      return номердогово;
+    }
+
+    public void setНомерДогово(Integer номердогово) {
+      this.номердогово = номердогово;
     }
 
 

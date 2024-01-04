@@ -4,8 +4,40 @@
       "master": null,
       "displayAttributeName": null,
       "required": false,
+      "relationName": "ОбъектСМР",
+      "projection": "ОбъектСМРL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
       "relationName": "Сотрудники",
       "projection": "ДолжностьL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "СправочникКонтрагенты",
+      "projection": "СпрКонтрагL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "ДокСмета",
+      "projection": "ДокСметаL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "ДокУсловДог",
+      "projection": "ДокУсловДогL",
       "detailModelName": null
     }
   ],

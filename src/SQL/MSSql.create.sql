@@ -99,9 +99,19 @@ CREATE TABLE [ОтПоВыпДогов] (
 
 	 [Выполнение] REAL  NULL,
 
+	 [НомерДогово] INT  NULL,
+
 	 [СумКонечОстат] REAL  NULL,
 
+	 [ДокСмета] UNIQUEIDENTIFIER  NOT NULL,
+
+	 [ДокУсловДог] UNIQUEIDENTIFIER  NOT NULL,
+
+	 [ОбъектСМР] UNIQUEIDENTIFIER  NOT NULL,
+
 	 [Сотрудники] UNIQUEIDENTIFIER  NOT NULL,
+
+	 [СпрКонтраг] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
 
