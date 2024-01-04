@@ -22,11 +22,11 @@ public class OtPoVypDogov {
     @Column(name = "primarykey", length = 16, unique = true, nullable = false)
     private UUID primarykey;
 
-    @Column(name = "СумКонечОстат")
-    private Float сумконечостат;
-
     @Column(name = "Выполнение")
     private Float выполнение;
+
+    @Column(name = "СумКонечОстат")
+    private Float сумконечостат;
 
     @Column(name = "НомерДогово")
     private Integer номердогово;
@@ -94,20 +94,20 @@ public class OtPoVypDogov {
         return primarykey;
     }
 
-    public Float getСумКонечОстат() {
-      return сумконечостат;
-    }
-
-    public void setСумКонечОстат(Float сумконечостат) {
-      this.сумконечостат = сумконечостат;
-    }
-
     public Float getВыполнение() {
       return выполнение;
     }
 
     public void setВыполнение(Float выполнение) {
       this.выполнение = выполнение;
+    }
+
+    public Float getСумКонечОстат() {
+      return сумконечостат;
+    }
+
+    public void setСумКонечОстат(Float сумконечостат) {
+      this.сумконечостат = сумконечостат;
     }
 
     public Integer getНомерДогово() {

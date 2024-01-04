@@ -58,8 +58,8 @@ CREATE TABLE ЕдИзмерен (
 
 CREATE TABLE ОтПоВыпДогов (
  primaryKey UUID NOT NULL,
- СумКонечОстат REAL NULL,
  Выполнение REAL NULL,
+ СумКонечОстат REAL NULL,
  НомерДогово INT NULL,
  ДокУсловДог UUID NOT NULL,
  СпрКонтраг UUID NOT NULL,

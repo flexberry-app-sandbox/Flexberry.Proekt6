@@ -108,9 +108,9 @@ CREATE TABLE "ОтПоВыпДогов"
 
 	"primaryKey" RAW(16) NOT NULL,
 
-	"СумКонечОстат" FLOAT(53) NULL,
-
 	"Выполнение" FLOAT(53) NULL,
+
+	"СумКонечОстат" FLOAT(53) NULL,
 
 	"НомерДогово" NUMBER(10) NULL,
 

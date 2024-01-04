@@ -55,9 +55,9 @@ namespace IIS.Proekt
     public class ОтПоВыпДогов : ICSSoft.STORMNET.DataObject
     {
         
-        private float fСумКонечОстат;
-        
         private float fВыполнение;
+        
+        private float fСумКонечОстат;
         
         private int fНомерДогово;
         
