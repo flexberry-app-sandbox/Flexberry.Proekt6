@@ -29,9 +29,9 @@ CREATE TABLE РасхМатВСтро (
 
 CREATE TABLE ДокСмета (
  primaryKey UUID NOT NULL,
+ ЦенаЗаЕд REAL NULL,
  ОбщСметСтои REAL NULL,
  Количество INT NULL,
- ЦенаЗаЕд REAL NULL,
  НомСметРасч INT NULL,
  ОбРабПоСмет REAL NULL,
  ЕдИзмерен UUID NOT NULL,

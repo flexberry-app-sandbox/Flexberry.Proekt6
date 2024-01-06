@@ -23,14 +23,14 @@ public class DokSmeta {
     @Column(name = "primarykey", length = 16, unique = true, nullable = false)
     private UUID primarykey;
 
+    @Column(name = "ЦенаЗаЕд")
+    private Float ценазаед;
+
     @Column(name = "ОбщСметСтои")
     private Float общсметстои;
 
     @Column(name = "Количество")
     private Integer количество;
-
-    @Column(name = "ЦенаЗаЕд")
-    private Float ценазаед;
 
     @Column(name = "НомСметРасч")
     private Integer номсметрасч;
@@ -94,6 +94,14 @@ public class DokSmeta {
         return primarykey;
     }
 
+    public Float getЦенаЗаЕд() {
+      return ценазаед;
+    }
+
+    public void setЦенаЗаЕд(Float ценазаед) {
+      this.ценазаед = ценазаед;
+    }
+
     public Float getОбщСметСтои() {
       return общсметстои;
     }
@@ -108,14 +116,6 @@ public class DokSmeta {
 
     public void setКоличество(Integer количество) {
       this.количество = количество;
-    }
-
-    public Float getЦенаЗаЕд() {
-      return ценазаед;
-    }
-
-    public void setЦенаЗаЕд(Float ценазаед) {
-      this.ценазаед = ценазаед;
     }
 
     public Integer getНомСметРасч() {

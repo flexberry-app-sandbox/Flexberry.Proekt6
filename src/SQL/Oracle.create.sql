@@ -53,11 +53,11 @@ CREATE TABLE "ДокСмета"
 
 	"primaryKey" RAW(16) NOT NULL,
 
+	"ЦенаЗаЕд" FLOAT(53) NULL,
+
 	"ОбщСметСтои" FLOAT(53) NULL,
 
 	"Количество" NUMBER(10) NULL,
-
-	"ЦенаЗаЕд" FLOAT(53) NULL,
 
 	"НомСметРасч" NUMBER(10) NULL,
 
