@@ -90,16 +90,16 @@ export let defineProjections = function (modelClass) {
     колПоАктТек: attr('Количество по актам текущий', { index: 1 }),
     суммаИтого: attr('Сумма итого', { index: 2 }),
     сотрудники: belongsTo('i-i-s-proekt-сотрудники', 'Сотрудники', {
-      фИО: attr('Сотрудники', { index: 4 })
-    }, { index: 3 }),
+      фИО: attr('Сотрудники', { index: 3 })
+    }, { index: -1, hidden: true }),
     номенклатура: belongsTo('i-i-s-proekt-номенклатура', 'Номенклатура', {
-      наименов: attr('Номенклатура', { index: 5 })
+      наименов: attr('Номенклатура', { index: 4 })
     }, { index: -1, hidden: true }),
     расхМатВСтро: belongsTo('i-i-s-proekt-расх-мат-в-стро', 'Количество по актам всего', {
-      количество: attr('Количество по актам всего', { index: 6 })
+      количество: attr('Количество по актам всего', { index: 5 })
     }, { index: -1, hidden: true }),
     докСмета: belongsTo('i-i-s-proekt-док-смета', 'Количество по смете', {
-      количество: attr('Количество по смете', { index: 7 })
+      количество: attr('Количество по смете', { index: 6 })
     }, { index: -1, hidden: true })
   });
 };

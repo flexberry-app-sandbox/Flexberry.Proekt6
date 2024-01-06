@@ -22,72 +22,71 @@ export default Controller.extend({
             link: 'i-i-s-proekt-отч-о-рас-ос-мат-l',
             caption: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-отч-о-рас-ос-мат-l.caption'),
             title: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-отч-о-рас-ос-мат-l.title'),
+            icon: 'calendar',
             children: null
           }, {
             link: 'i-i-s-proekt-расх-мат-в-стро-l',
             caption: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-расх-мат-в-стро-l.caption'),
             title: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-расх-мат-в-стро-l.title'),
-            icon: 'folder open',
+            icon: 'building',
             children: null
           }, {
             link: 'i-i-s-proekt-док-смета-l',
             caption: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-док-смета-l.caption'),
             title: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-док-смета-l.title'),
-            icon: 'tasks',
+            icon: 'list',
             children: null
           }, {
             link: 'i-i-s-proekt-объект-с-м-р-l',
             caption: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-объект-с-м-р-l.caption'),
             title: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-объект-с-м-р-l.title'),
-            icon: 'tags',
+            icon: 'table',
             children: null
           }, {
             link: 'i-i-s-proekt-ед-измерен-l',
             caption: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-ед-измерен-l.caption'),
             title: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-ед-измерен-l.title'),
-            icon: 'address card',
+            icon: 'chart line',
             children: null
           }, {
             link: 'i-i-s-proekt-от-по-вып-догов-l',
             caption: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-от-по-вып-догов-l.caption'),
             title: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-от-по-вып-догов-l.title'),
-            icon: 'paperclip',
             children: null
           }, {
             link: 'i-i-s-proekt-номенклатура-l',
             caption: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-номенклатура-l.caption'),
             title: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-номенклатура-l.title'),
-            icon: 'address card',
+            icon: 'phone',
             children: null
           }, {
             link: 'i-i-s-proekt-спра-должнос-l',
             caption: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-спра-должнос-l.caption'),
             title: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-спра-должнос-l.title'),
-            icon: 'folder',
+            icon: 'address card',
             children: null
           }, {
             link: 'i-i-s-proekt-док-услов-дог-l',
             caption: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-док-услов-дог-l.caption'),
             title: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-док-услов-дог-l.title'),
-            icon: 'tasks',
             children: null
           }, {
             link: 'i-i-s-proekt-сотрудники-l',
             caption: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-сотрудники-l.caption'),
             title: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-сотрудники-l.title'),
-            icon: 'file',
+            icon: 'folder',
             children: null
           }, {
             link: 'i-i-s-proekt-спр-контраг-l',
             caption: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-спр-контраг-l.caption'),
             title: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-спр-контраг-l.title'),
-            icon: 'archive',
+            icon: 'tasks',
             children: null
           }, {
             link: 'i-i-s-proekt-т-ч-смета-l',
             caption: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-т-ч-смета-l.caption'),
             title: i18n.t('forms.application.sitemap.proekt.i-i-s-proekt-т-ч-смета-l.title'),
-            icon: 'tasks',
+            icon: 'edit',
             children: null
           }]
         }

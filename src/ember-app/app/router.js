@@ -37,10 +37,10 @@ Router.map(function () {
   this.route('i-i-s-proekt-от-по-вып-догов-e.new',
   { path: 'i-i-s-proekt-от-по-вып-догов-e/new' });
   this.route('i-i-s-proekt-отч-о-рас-ос-мат-l');
-  this.route('null',
-  { path: 'null/:id' });
-  this.route('null.new',
-  { path: 'null/new' });
+  this.route('i-i-s-proekt-отч-о-рас-ос-мат-e',
+  { path: 'i-i-s-proekt-отч-о-рас-ос-мат-e/:id' });
+  this.route('i-i-s-proekt-отч-о-рас-ос-мат-e.new',
+  { path: 'i-i-s-proekt-отч-о-рас-ос-мат-e/new' });
   this.route('i-i-s-proekt-расх-мат-в-стро-l');
   this.route('i-i-s-proekt-расх-мат-в-стро-e',
   { path: 'i-i-s-proekt-расх-мат-в-стро-e/:id' });
